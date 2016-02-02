@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Enterprise</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<div class="container">
+  
+	  <div class="overlay"></div>
+
+	  <header>
+
+	  	<%= render 'layouts/nav_bar' %>
+
+	  </header>
+	  
+	  <div class="main">
+	  	<div class="row">
+				<%= render 'layouts/sweet_alerts' %>
+			  <div class="col-md-12">
+			  	<% if notice %>
+					  <p class="alert alert-success"><%= notice %></p>
+					<% end %>
+					<% if alert %>
+					  <p class="alert alert-danger"><%= alert %></p>
+					<% end %>
+			  	<%= yield %>
+			  </div>
+			</div>
+	  </div>
+	  
+	</div>
+
+</body>
+</html>
