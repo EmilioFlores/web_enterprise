@@ -31,6 +31,10 @@ gem 'sweet-alert-confirm'
 gem 'devise'
 gem 'momentjs-rails', '>= 2.8.1'
 
+# Charts
+gem "highcharts-rails"
+
+
 group :development, :test do
 	gem 'pry-rails'
 	gem 'better_errors'
