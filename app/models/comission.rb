@@ -1,3 +1,3 @@
 class Comission < ActiveRecord::Base
-	belongs_to :policy
+	has_one :policy, inverse_of: :comissions
 end

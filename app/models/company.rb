@@ -1,5 +1,4 @@
 class Company < ActiveRecord::Base
-	belongs_to :policy
-	has_one :comission
-	has_many :company_users
+	has_one :policy, inverse_of: :companies
+	has_many :company_users, inverse_of: :company
 end
