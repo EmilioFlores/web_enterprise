@@ -1,3 +1,3 @@
 class CompanyUser < ActiveRecord::Base
-	belongs_to : client
+	belongs_to :client
 end
