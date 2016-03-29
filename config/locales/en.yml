@@ -44,6 +44,10 @@ en:
         password_confirmation: Password confirmation
         current_password: Current password
   #My own Dictionary
+  welcome: Welcome!
+  next_events:  Next Events
+  events: Events
+  date: Date
   login: Login
   logout: Logout
   edit_user: My Info

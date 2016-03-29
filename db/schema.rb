@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307194352) do
+ActiveRecord::Schema.define(version: 20160315144928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160307194352) do
     t.datetime "deleted_at"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "client_id"
   end
 
   add_index "addresses", ["deleted_at"], name: "index_addresses_on_deleted_at", using: :btree
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160307194352) do
 
   create_table "clients", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "marital_status"
+    t.integer  "marital_status",   default: 0
     t.string   "first_name"
     t.string   "second_name"
     t.string   "last_name"
@@ -109,6 +110,34 @@ ActiveRecord::Schema.define(version: 20160307194352) do
   add_index "company_users", ["deleted_at"], name: "index_company_users_on_deleted_at", using: :btree
   add_index "company_users", ["user_id"], name: "index_company_users_on_user_id", using: :btree
 
+  create_table "events", force: :cascade do |t|
+    t.integer  "client_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "relationship", default: 0
+    t.datetime "event_date"
+    t.text     "notes"
+    t.datetime "deleted_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "events", ["client_id"], name: "index_events_on_client_id", using: :btree
+  add_index "events", ["deleted_at"], name: "index_events_on_deleted_at", using: :btree
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "event_id"
+    t.string   "notification_type"
+    t.boolean  "read",              default: false
+    t.text     "description"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "notifications", ["deleted_at"], name: "index_notifications_on_deleted_at", using: :btree
+  add_index "notifications", ["event_id"], name: "index_notifications_on_event_id", using: :btree
+
   create_table "offsprings", force: :cascade do |t|
     t.integer  "client_id"
     t.string   "first_name"
@@ -138,11 +167,25 @@ ActiveRecord::Schema.define(version: 20160307194352) do
     t.datetime "deleted_at"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "company_id"
   end
 
   add_index "policies", ["client_id"], name: "index_policies_on_client_id", using: :btree
   add_index "policies", ["comission_id"], name: "index_policies_on_comission_id", using: :btree
   add_index "policies", ["deleted_at"], name: "index_policies_on_deleted_at", using: :btree
+
+  create_table "prospects", force: :cascade do |t|
+    t.integer  "client_id"
+    t.integer  "company_id"
+    t.string   "product_type"
+    t.integer  "payment_method"
+    t.datetime "end_date"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "prospects", ["client_id"], name: "index_prospects_on_client_id", using: :btree
+  add_index "prospects", ["company_id"], name: "index_prospects_on_company_id", using: :btree
 
   create_table "referrals", force: :cascade do |t|
     t.integer  "referrer_id"

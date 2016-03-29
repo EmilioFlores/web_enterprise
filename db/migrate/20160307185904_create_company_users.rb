@@ -5,7 +5,7 @@ class CreateCompanyUsers < ActiveRecord::Migration
     	t.integer :company_id, index: true
     	t.string :agent_number
     	t.string :user_name
-			t.string :password_hash
+		  t.string :password_hash
     	t.string :password_salt
     	t.string :protal_url
     	t.boolean :has_promotoria, default: false
