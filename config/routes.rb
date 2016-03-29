@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   post '/set_locale/wow', to: 'users#set_locale', as: :set_user_locale
+
+
+  resources :clients
+
 end

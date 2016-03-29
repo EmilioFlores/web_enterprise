@@ -1,0 +1,10 @@
+<h1>New Client</h1>
+
+<%= simple_form_for @client, url: {action: 'create'} do |f| %>
+
+	<%= f.input :first_name, label: "First Name" %>
+
+
+  	<%= link_to 'Back', :back, class: "btn btn-default" %>
+  	<%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>

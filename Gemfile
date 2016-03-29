@@ -18,6 +18,7 @@ gem 'mousetrap-rails'
 gem 'jquery-turbolinks'
 gem 'puma'
 gem 'simple_form'
+gem 'enum_help'
 gem 'paranoia', '2.0.4'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails',
                             branch: 'master', submodules: true
