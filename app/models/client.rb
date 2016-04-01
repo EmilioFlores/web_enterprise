@@ -8,4 +8,5 @@ class Client < ActiveRecord::Base
 	has_many :addresses, inverse_of: :client
 
 	enum marital_status: [:single, :married, :widowed]
+	enum gender: [:male, :female, :other]
 end

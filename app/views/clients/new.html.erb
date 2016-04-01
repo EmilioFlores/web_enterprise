@@ -1,9 +1,52 @@
-<h1>New Client</h1>
+<h1><%= t('new') + ' ' + t('client') %></h1>
 
 <%= simple_form_for @client, url: {action: 'create'} do |f| %>
 
-	<%= f.input :first_name, label: "First Name" %>
 
+	<div class="container-fluid">
+	  <div class="row">
+	    <div class="col-md-6">
+	    	<%= f.input :first_name, label: t('name') %>
+	    </div>
+	    <div class="col-md-6">
+	    	<%= f.input :second_name, label: t('middle_name')%>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-md-6">
+			<%= f.input :last_name, label: t('last_name') %>
+	    </div>
+	    <div class="col-md-6">
+	    	<%= f.input :second_last_name, label: t('second_last_name') %>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-md-12">
+    		<%= f.input :birth_date, as: :date_picker, label: t('birth_date'),
+                input_html: {data: {date_options: {defaultDate: Time.now}}} %>
+	    </div>
+	  </div>
+		<div class="row">
+			<div class="col-md-12">
+				<%= f.input :gender %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<%= f.input :email %>
+			</div>
+		</div>		
+
+
+
+	</div>
+
+
+
+	
+	
 
   	<%= link_to 'Back', :back, class: "btn btn-default" %>
   	<%= f.submit "Create", class: "btn btn-primary" %>
