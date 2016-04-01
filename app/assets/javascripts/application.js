@@ -18,9 +18,11 @@
 //= require jquery.nested-fields
 //= require sweet-alert
 //= require sweet-alert-confirm
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-//= require moment
 //= require_tree .
 //= require highcharts
 

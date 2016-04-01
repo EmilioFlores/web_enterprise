@@ -51,6 +51,10 @@ en:
   login: Login
   logout: Logout
   edit_user: My Info
+  birth_date:
+  name:
+  middle_name: 
+  last_name: 
   #SweetAlert Messages
   locale_changed: Language changed
   locale_changed_error: Error trying to change language
