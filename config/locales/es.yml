@@ -45,6 +45,7 @@ es:
         current_password: Contraseña actual
   #My own Dictionary
   welcome: Bienvenido!
+  complete_registration: completar registro
   next_events:  Eventos Próximos
   events: Eventos
   date: Fecha
