@@ -1,51 +1,78 @@
 <h1><%= t('new') + ' ' + t('client') %></h1>
 
 <%= simple_form_for @client, url: {action: 'create'} do |f| %>
-
-
 	<div class="container-fluid">
-	  <div class="row">
-	    <div class="col-md-6">
-	    	<%= f.input :first_name, label: t('name') %>
-	    </div>
-	    <div class="col-md-6">
-	    	<%= f.input :second_name, label: t('middle_name')%>
-	    </div>
-	  </div>
-	  <div class="row">
-	    <div class="col-md-6">
-			<%= f.input :last_name, label: t('last_name') %>
-	    </div>
-	    <div class="col-md-6">
-	    	<%= f.input :second_last_name, label: t('second_last_name') %>
-	    </div>
-	  </div>
-
-	  <div class="row">
-	    <div class="col-md-12">
-    		<%= f.input :birth_date, as: :date_picker, label: t('birth_date'),
-                input_html: {data: {date_options: {defaultDate: Time.now}}} %>
-	    </div>
-	  </div>
 		<div class="row">
-			<div class="col-md-12">
-				<%= f.input :gender %>
+		    <div class="col-md-6">
+		    	<%= f.input :first_name, label: t('name') %>
+		    </div>
+			<div class="col-md-6">
+				<%= f.input :second_name, label: t('middle_name')%>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.input :last_name, label: t('last_name') %>
+			</div>
+			<div class="col-md-6">
+				<%= f.input :second_last_name, label: t('second_last_name') %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.input :birth_date, as: :date_picker, label: t('birth_date'),
+				input_html: {data: {date_options: {defaultDate: Time.now}}} %>
+		    </div>
+			<div class="col-md-6">
+				<%= f.input :gender, label: t('gender') %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.input :email, label: t('email') %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.input :phone_number, label: t('phone_number') %>
+			</div>
+			<div class="col-md-6">
+				<%= f.input :cellphone_number, label: t('cellphone_number') %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= f.input :client_since, as: :date_picker, label: t('client_since'), input_html: {data: {date_options: {defaultDate: Time.now}}} %>
+			</div>
+			<div class="col-md-6">
+				<%= f.input :marital_status %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<%= f.input :has_kids, label: t('has_kids') %>
+			</div>
+			<div class="col-md-2">
+				<%= f.input :is_vip, label: t('is_vip') %>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<%= f.input :email %>
-			</div>
-		</div>		
+		<div class="items">
+		<%= f.nested_fields_for :spouses do |f| %>
+			<fieldset class="item">
+				
+				<%= f.input :first_name, label: t('first_name') %>
 
+				<a href="#" class="remove">remove</a>
 
+				<%= f.hidden_field :id %>
+				<%= f.hidden_field :_destroy %>
+			</fieldset>
+		<% end %>
+		</div>
+		<a href="#" class="add"><%= t('add') + ' ' + t('spouse') %></a>
 
 	</div>
-
-
-
-	
 	
 
   	<%= link_to 'Back', :back, class: "btn btn-default" %>

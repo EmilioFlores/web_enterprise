@@ -1,6 +1,9 @@
 class Client < ActiveRecord::Base
 	belongs_to :user, inverse_of: :clients
+
 	has_many :spouses, inverse_of: :client
+	accepts_nested_attributes_for :spouses, allow_destroy: true
+
 	has_many :prospects, inverse_of: :client
 	has_many :policies, inverse_of: :client
 	has_many :events, inverse_of: :client
