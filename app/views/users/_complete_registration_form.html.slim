@@ -1,0 +1,14 @@
+= simple_form_for current_user, url: complete_registration_update_path do |f|
+  .col-md-6
+    = f.input :first_name
+  .col-md-6
+    = f.input :second_name
+  .col-md-6
+    = f.input :last_name
+  .col-md-6
+    = f.input :second_last_name
+  .col-md-12
+    = f.input :phone_number
+  .actions.col-md-12
+    = link_to t('back').capitalize, root_path, class: 'btn btn-default'
+    = f.submit nil, class: 'btn btn-primary'
