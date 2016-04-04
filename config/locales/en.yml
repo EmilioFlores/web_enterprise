@@ -52,10 +52,23 @@ en:
   login: Login
   logout: Logout
   edit_user: My Info
-  birth_date:
-  name:
-  middle_name: 
-  last_name: 
+
+  name: Name
+  first_name: First Name
+  middle_name: Middle Name
+  last_name: Last Name
+  second_last_name: Second Last Name
+  birth_date: Birth Date
+  gender: Gender
+  email: Email
+  phone_number: Phone Number
+  cellphone_number: Mobile Number
+  client_since: Client Since
+  has_kids: Has Kids
+  is_vip: Is VIP
+  add: Add
+  spouse: Spouse
+  
   #SweetAlert Messages
   locale_changed: Language changed
   locale_changed_error: Error trying to change language
