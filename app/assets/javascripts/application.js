@@ -45,7 +45,7 @@ $(document).ready(function () {
     toggleMenu();
   });
 
-  $('FORM').nestedFields();
+    $('#spouses_form, #offsprings_form').nestedFields();
 
 
 	$('.add').click(datepicker_update);

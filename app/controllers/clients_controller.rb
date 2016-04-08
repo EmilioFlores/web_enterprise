@@ -41,6 +41,7 @@ class ClientsController < ApplicationController
 	end
 
 	def create
+		exit
 		@client = Client.new(client_params)
 		if @client.save
 			redirect_to client_path(@client)
@@ -75,13 +76,20 @@ class ClientsController < ApplicationController
 			:is_vip,
 			:client_since,
 			spouses_attributes: [:id,
-								 :first_name, 
-								 :second_name, 
-								 :last_name,
-								 :second_last_name,
-								 :birth_date,
-								 :married_date,
-								 :gender]
+								:first_name, 
+								:second_name, 
+								:last_name,
+								:second_last_name,
+								:birth_date,
+								:married_date,
+								:gender],
+			offspings_attributes: [:id,
+								:first_name, 
+								:second_name, 
+								:last_name,
+								:second_last_name,
+								:birth_date,
+								:gender]
 		)
 	end
 
