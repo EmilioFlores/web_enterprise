@@ -50,10 +50,14 @@ class User < ActiveRecord::Base
   has_many :referrals, inverse_of: :user
   has_many :company_users, inverse_of: :user
 
-  validates :phone_number, numericality: true,
-                           length: { minimum: 10, maximum: 15 }
+  validates :phone_number, numericality: true, on: :update
+  validates :phone_number, presence: true, on: :update
 
   accepts_nested_attributes_for :company_users, allow_destroy: true
+
+  def full_name
+    return first_name + ' ' + second_name + ' ' + last_name + ' ' + second_last_name
+  end
 
   private
 

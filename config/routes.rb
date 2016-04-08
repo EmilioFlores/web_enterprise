@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   resources :clients
 
+  ###################################USERS######################################
+
+  get 'users/:id', to: 'users#profile',  as: :user
+
+  ##############################################################################
+
   get '/complete_registration', to: 'users#complete_registration',
   															as: :complete_registration
   patch '/complete_registration/:id', to: 'users#complete_registration_update',
