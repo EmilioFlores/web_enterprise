@@ -48,6 +48,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+    @user = User.find(params[:id])
+  end
+
   def complete_registration
     @user = current_user
   end
