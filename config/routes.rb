@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/complete_registration', to: 'users#complete_registration',
   															as: :complete_registration
-  patch '/complete_registration', to: 'user#complete_registration_update',
-  																as: :complete_registration_update
-
+  patch '/complete_registration/:id', to: 'users#complete_registration_update',
+  																		as: :complete_registration_update
+  get '/companies', to: 'users#user_companies', as: :user_companies
 end
