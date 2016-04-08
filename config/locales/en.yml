@@ -1,82 +1,32 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   activerecord:
+    attributes:
+      user:
+        created_at: Created at
+        current_password: Current password
+        current_sign_in_at: Current sign in at
+        current_sign_in_ip: Current sign in IP
+        email: Email
+        encrypted_password: Encrypted password
+        last_sign_in_at: Last sign in at
+        last_sign_in_ip: Last sign in IP
+        locale: Locale
+        password: Password
+        password_confirmation: Password confirmation
+        remember_created_at: Remember created at
+        reset_password_sent_at: Reset password sent at
+        reset_password_token: Reset password token
+        sign_in_count: Sign in count
+        updated_at: Updated at
     models:
       user:
         one: User
         other: Users
-    attributes:
-      user:
-        email: Email
-        encrypted_password: Encrypted password
-        reset_password_token: Reset password token
-        reset_password_sent_at: Reset password sent at
-        remember_created_at: Remember created at
-        sign_in_count: Sign in count
-        current_sign_in_at: Current sign in at
-        last_sign_in_at: Last sign in at
-        current_sign_in_ip: Current sign in IP
-        last_sign_in_ip: Last sign in IP
-        created_at: Created at
-        updated_at: Updated at
-        locale: Locale
-        password: Password
-        password_confirmation: Password confirmation
-        current_password: Current password
-  #My own Dictionary
-  welcome: Welcome!
-  complete_registration: complete registration
-  next_events:  Next Events
-  events: Events
-  date: Date
-  login: Login
-  logout: Logout
-  edit_user: My Info
-
-  name: Name
-  first_name: First Name
-  middle_name: Middle Name
-  last_name: Last Name
-  second_last_name: Second Last Name
+  add: Add
   birth_date: Birth Date
-  gender: Gender
-  email: Email
-  phone_number: Phone Number
   cellphone_number: Mobile Number
   client_since: Client Since
-  has_kids: Has Kids
-  is_vip: Is VIP
-  add: Add
-  spouse: Spouse
-  
-  #SweetAlert Messages
-  locale_changed: Language changed
-  locale_changed_error: Error trying to change language
-  #SweetAlert Titles
-  info: Info
-  error: Error!
-  warning: Warning!
-  success: Success!
+  complete_registration: complete registration
   date:
     abbr_day_names:
     - Sun
@@ -87,7 +37,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    - 
+    - null
     - Jan
     - Feb
     - Mar
@@ -109,11 +59,11 @@ en:
     - Friday
     - Saturday
     formats:
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
-      short: "%b %d"
+      default: '%Y-%m-%d'
+      long: '%B %d, %Y'
+      short: '%b %d'
     month_names:
-    - 
+    - null
     - January
     - February
     - March
@@ -156,16 +106,16 @@ en:
         other: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: '%{count} days'
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: '%{count} minutes'
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: '%{count} months'
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: '%{count} seconds'
     prompts:
       day: Day
       hour: Hour
@@ -173,12 +123,14 @@ en:
       month: Month
       second: Seconds
       year: Year
+  edit_user: My Info
+  email: Email
+  error: Error!
   errors:
-    format: "%{attribute} %{message}"
+    format: '%{attribute} %{message}'
     messages:
       accepted: must be accepted
       blank: can't be blank
-      present: must be blank
       confirmation: doesn't match %{attribute}
       empty: can't be empty
       equal_to: must be equal to %{count}
@@ -193,10 +145,12 @@ en:
       not_a_number: is not a number
       not_an_integer: must be an integer
       odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
       record_invalid: 'Validation failed: %{errors}'
       restrict_dependent_destroy:
-        one: Cannot delete record because a dependent %{record} exists
         many: Cannot delete record because dependent %{record} exist
+        one: Cannot delete record because a dependent %{record} exists
       taken: has already been taken
       too_long:
         one: is too long (maximum is 1 character)
@@ -207,12 +161,15 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-      other_than: must be other than %{count}
     template:
       body: 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
-        other: "%{count} errors prohibited this %{model} from being saved"
+        other: '%{count} errors prohibited this %{model} from being saved'
+  events: Events
+  first_name: First Name
+  gender: Gender
+  has_kids: Has Kids
   helpers:
     select:
       prompt: Please select
@@ -220,25 +177,35 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+  info: Info
+  is_vip: Is VIP
+  last_name: Last Name
+  locale_changed: Language changed
+  locale_changed_error: Error trying to change language
+  login: Login
+  logout: Logout
+  middle_name: Middle Name
+  name: Name
+  next_events: Next Events
   number:
     currency:
       format:
-        delimiter: ","
-        format: "%u%n"
+        delimiter: ','
+        format: '%u%n'
         precision: 2
-        separator: "."
+        separator: .
         significant: false
         strip_insignificant_zeros: false
-        unit: "$"
+        unit: $
     format:
-      delimiter: ","
+      delimiter: ','
       precision: 3
-      separator: "."
+      separator: .
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: "%n %u"
+        format: '%n %u'
         units:
           billion: Billion
           million: Million
@@ -252,7 +219,7 @@ en:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: "%n %u"
+        format: '%n %u'
         units:
           byte:
             one: Byte
@@ -264,19 +231,25 @@ en:
     percentage:
       format:
         delimiter: ''
-        format: "%n%"
+        format: '%n%'
     precision:
       format:
         delimiter: ''
+  phone_number: Phone Number
+  second_last_name: Second Last Name
+  spouse: Spouse
+  success: Success!
   support:
     array:
-      last_word_connector: ", and "
-      two_words_connector: " and "
-      words_connector: ", "
+      last_word_connector: ', and '
+      two_words_connector: ' and '
+      words_connector: ', '
   time:
     am: am
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      long: '%B %d, %Y %H:%M'
+      short: '%d %b %H:%M'
     pm: pm
+  warning: Warning!
+  welcome: Welcome!
