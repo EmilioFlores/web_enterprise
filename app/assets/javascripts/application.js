@@ -47,7 +47,17 @@ $(document).ready(function () {
 
   $('FORM').nestedFields();
 
+
+	$('.add').click(datepicker_update);
+	$('.remove').click(datepicker_update);
+
+	function datepicker_update(){
+	    $('.datetimepicker').datetimepicker();
+	}
+
 });
+
+
 
 
 //= require turbolinks

@@ -12,4 +12,10 @@ class Client < ActiveRecord::Base
 
 	enum marital_status: [:single, :married, :widowed]
 	enum gender: [:male, :female, :other]
+
+
+	def full_name
+		return first_name + ' ' + second_name + ' ' + last_name + ' ' + second_last_name
+	end
+
 end

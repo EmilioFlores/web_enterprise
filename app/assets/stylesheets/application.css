@@ -18,3 +18,11 @@
  *= require_tree .
  *= require_self
  */
+
+.bot-nav-btns {
+	margin-top: 30px;
+}
+
+.add, .remove {
+	display: inline;
+}
