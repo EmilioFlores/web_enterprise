@@ -1,42 +1,53 @@
+.row
+  .col-md-12
+    hr
+.row
 = simple_form_for @user, url: complete_registration_update_path(@user) do |f|
   .items
     = f.nested_fields_for :company_users do |f|
       fieldset.item
-        .col-md-6
-          = f.input :first_name
-        .col-md-6
-          = f.input :second_name
-        .col-md-6
-          = f.input :last_name
-        .col-md-6
-          = f.input :second_last_name
         .col-md-12
-          = f.input :phone_number
-        a.remove href="#"
-          = t('remove')
+          = f.association :company
+        .col-md-6
+          = f.input :agent_number
+        .col-md-6
+          = f.input :user_name
+        .col-md-12
+          = f.input :has_promotoria, input_html: {id: 'promotoria-fields'}
+        .promotoria-fields.hidden_div
+          .col-md-6
+            = f.input :number_promotoria
+          .col-md-6
+            = f.input :name_promotoria_contact
+          .col-md-6
+            = f.input :phone_promotoria_contact
+          .col-md-6
+            = f.input :email_promotoria_contact
+        .col-md-12
+          = f.input :has_company, input_html: {id: 'company-fields'}
+        .company-fields.hidden_div
+          .col-md-6
+            = f.input :number_company
+          .col-md-6
+            = f.input :name_company_contact
+          .col-md-6
+            = f.input :phone_company_contact
+          .col-md-6
+            = f.input :email_company_contact
+
+        /.col-md-12
+        /  = f.input :phone_number
+        .col-md-12
+          a.remove.btn.btn-danger.pull-right href="#"
+            = t('remove')
 
         = f.hidden_field :id
         = f.hidden_field :_destroy
-  a href="#" class="add"
-    = t('add')
+        .col-md-12 
+          hr
+  .col-md-12
+    a href="javascript:void(0)" class="add btn btn-default pull-right"
+      = t('add')
   .actions.col-md-12
     = link_to t('back').capitalize, root_path, class: 'btn btn-default'
     = f.submit nil, class: 'btn btn-primary'
-
-        t.integer  "user_id"
-    t.integer  "company_id"
-    t.string   "agent_number"
-    t.string   "user_name"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.string   "protal_url"
-    t.boolean  "has_promotoria",           default: false
-    t.string   "number_promotoria"
-    t.string   "name_promotoria_contact"
-    t.string   "phone_promotoria_contact"
-    t.string   "email_promotoria_contact"
-    t.boolean  "has_company",              default: false
-    t.string   "number_company"
-    t.string   "name_company_contact"
-    t.string   "phone_company_contact"
-    t.string   "email_company_contact"
