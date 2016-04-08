@@ -43,6 +43,7 @@ es:
         password: Contraseña
         password_confirmation: Confirmación de contraseña
         current_password: Contraseña actual
+  
   #My own Dictionary
   welcome: Bienvenido!
   complete_registration: completar registro
@@ -52,6 +53,23 @@ es:
   login: Login
   logout: Logout
   edit_user: Mi información
+  
+  name: Nombre
+  first_name: Primer Nombre
+  middle_name: Segundo Nombre
+  last_name: Apellido
+  second_last_name: Segundo Apellido
+  birth_date: Fecha de Nacimiento
+  gender: Genero
+  email: Correo Electrónico
+  phone_number: Teléfono
+  cellphone_number: Teléfono Celular
+  client_since: Cliente Desde
+  has_kids: Tiene Hijos
+  is_vip: Es VIP
+  add: Agregar
+  spouse: Cónyuge
+
   #SweetAlert Messages
   locale_changed: Lenguaje cambiado
   locale_changed_error: Error al intentar cambiar de lenguaje
