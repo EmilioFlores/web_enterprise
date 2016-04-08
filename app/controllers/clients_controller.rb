@@ -36,13 +36,26 @@ class ClientsController < ApplicationController
 		@client = Client.new
 	end
 
+	def edit
+		@client = Client.find(params[:id])
+	end
+
 	def create
-		exit
 		@client = Client.new(client_params)
 		if @client.save
 			redirect_to client_path(@client)
 		else 
 			render :new
+		end
+	end
+
+	def update
+		@client = Client.find(params[:id])
+
+		if @client.update_attributes(client_params)
+			redirect_to @client, notice: 'Client was successfully updated.'
+		else
+			render action: "edit"
 		end
 	end
 
