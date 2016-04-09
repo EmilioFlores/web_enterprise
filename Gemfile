@@ -6,6 +6,7 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -24,13 +25,14 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails',
                             branch: 'master', submodules: true
 gem 'slim-rails'
 gem 'twitter-bootstrap-rails'
-gem 'jquery-datatables-rails', '~> 3.1.1'
 gem 'font-awesome-rails'
 gem 'awesome_nested_fields'
 gem 'sweetalert-rails'
 gem 'sweet-alert-confirm'
 gem 'devise'
 gem 'momentjs-rails', '>= 2.8.1'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 # Charts
 gem "highcharts-rails"
