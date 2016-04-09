@@ -287,11 +287,8 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.1.0)
-<<<<<<< HEAD
   coffee-script-source (= 1.8.0)
-=======
   country_select
->>>>>>> ac833eaa6a66deb123a273ec19c7eca2b756981c
   datetimepicker-rails!
   devise
   enum_help
