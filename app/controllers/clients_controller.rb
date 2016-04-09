@@ -26,6 +26,7 @@ class ClientsController < ApplicationController
 
 	def index
 		
+		@clients = Client.all();
 	end
 
 	def show
@@ -41,7 +42,7 @@ class ClientsController < ApplicationController
 	end
 
 	def create
-		exit
+		
 		@client = Client.new(client_params)
 		if @client.save
 			redirect_to client_path(@client)
@@ -83,13 +84,25 @@ class ClientsController < ApplicationController
 								:birth_date,
 								:married_date,
 								:gender],
-			offspings_attributes: [:id,
+			offsprings_attributes: [:id,
 								:first_name, 
 								:second_name, 
 								:last_name,
 								:second_last_name,
 								:birth_date,
-								:gender]
+								:gender],
+			addresses_attributes: [:id,
+								:user_id,
+								:client_id,
+								:street,
+								:exterior_number,
+								:interior_number,
+								:county,
+								:state,
+								:city,
+								:delegation,
+								:zip_code,
+								:country]
 		)
 	end
 
