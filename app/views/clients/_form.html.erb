@@ -97,7 +97,7 @@
 		<div id="offsprings_form">
 			<h2><%= t('offsprings') %></h2>
 			<div class="items">
-			<%= f.nested_fields_for :offsprings, new_item_index: 'new_offspring_item' do |ff| %>
+			<%= f.nested_fields_for :offsprings do |ff| %>
 				<fieldset class="item">					
 					<div class="row">
 					    <div class="col-md-3">
@@ -132,7 +132,55 @@
 			</div>
 			<a href="#" class="add btn-sm btn-success">+ <%= t('add') + ' ' + t('offsprings') %></a>
 		</div>
+		<hr>
+		<div id="addresses_form">
+			<h2><%= t('addresses') %></h2>
+			<div class="items">
+			<%= f.nested_fields_for :addresses do |ff| %>
+				<fieldset class="item">					
+					<div class="row">
+					    <div class="col-md-3">
+					    	<%= ff.input :street, label: t('street') %>
+					    </div>
+						<div class="col-md-3">
+							<%= ff.input :exterior_number, label: t('exterior_number')%>
+						</div>
+						<div class="col-md-3">
+							<%= ff.input :interior_number, label: t('interior_number') %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<%= ff.input :county, label: t('county') %>
+						</div>
+						<div class="col-md-3">
+							<%= ff.input :city, label: t('city') %>
+						</div>
+						<div class="col-md-3">
+							<%= ff.input :state, label: t('state') %>
+						</div>
+						<div class="col-md-3">
+							<%= ff.input :delegation, label: t('delegation') %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<%= ff.input :country, label: t('country'), selected: "MX" %>
+						</div>
+						<div class="col-md-3">
+							<%= ff.input :zip_code, label: t('zip_code') %>
+						</div>
+					</div>
 
+					<a href="#" class="remove btn-sm btn-danger"> - <%= t('remove') %></a>
+
+					<%= ff.hidden_field :id %>
+					<%= ff.hidden_field :_destroy %>
+				</fieldset>
+			<% end %>
+			</div>
+			<a href="#" class="add btn-sm btn-success">+ <%= t('add') + ' ' + t('addresses') %></a>
+		</div>
 
 	</div>
 	
