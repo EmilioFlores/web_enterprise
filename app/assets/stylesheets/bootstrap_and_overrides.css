@@ -60,21 +60,8 @@ a {
 }
 
 header {
-    width: 5%;
-    height: 100%;
-    position: fixed;
-    overflow: hidden;
-    transition: .32s ease-out;
-    z-index: 2;
-    background: #384047;
-}
-
-header a, .navBtn {
-  color: #fff;
-}
-
-.toggle {
-    width: 220px;
+    z-index: 9999;
+    padding-bottom: 20px;
 }
 
 .reveal {
@@ -82,35 +69,8 @@ header a, .navBtn {
     left: 0;
 }
 
-nav {
-    padding-left: 360px;
-    overflow: hidden;
-    position: absolute;
-    transition: .3s ease-out;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    height: 100%;
-}
-nav a {
-    float: left;
-    padding: 8px 0;
-    opacity: .5;
-    width: 100%;
-    transition: .3s ease;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 1.85em;
-}
-
-nav a.locale_active {
-    float: none;
-    line-height: 1.1em;
-}
-nav a:hover, .current, .toggle .navBtn {
-    opacity: 1;
+.navbar-brand {
+	margin-left: 0 !important;
 }
 
 .toggle nav {
