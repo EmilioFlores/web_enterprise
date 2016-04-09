@@ -187,6 +187,10 @@ es:
   middle_name: Segundo Nombre
   name: Nombre
   next_events: Eventos Próximos
+  select_a_gender: Selecciona un Genero
+  married_date: Fecha de Matrimonio
+  remove: Remover
+  offsprings: Hijos
   number:
     currency:
       format:
