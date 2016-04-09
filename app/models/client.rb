@@ -30,6 +30,8 @@ class Client < ActiveRecord::Base
 
 	has_many :prospects, inverse_of: :client
 	has_many :policies, inverse_of: :client
+
+	# TODO: remove this shieeeet
 	has_many :events, inverse_of: :client
 
 	has_many :offsprings, inverse_of: :client
