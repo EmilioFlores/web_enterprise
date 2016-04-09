@@ -36,6 +36,7 @@ class Client < ActiveRecord::Base
 	accepts_nested_attributes_for :offsprings, allow_destroy: true
 	
 	has_many :addresses, inverse_of: :client
+	accepts_nested_attributes_for :addresses, allow_destroy: true
 
 	enum marital_status: [:single, :married, :widowed]
 	enum gender: [:male, :female, :other]

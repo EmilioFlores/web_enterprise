@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #MINE
 
 gem 'rename'
+gem 'country_select'
 gem 'mousetrap-rails'
 gem 'jquery-turbolinks'
 gem 'puma'
