@@ -50,4 +50,26 @@
       = t('add')
   .actions.col-md-12
     = link_to t('back').capitalize, root_path, class: 'btn btn-default'
+<<<<<<< HEAD
     = f.submit nil, class: 'btn btn-primary'
+=======
+    = f.submit nil, class: 'btn btn-primary'
+
+        t.integer  "user_id"
+    t.integer  "company_id"
+    t.string   "agent_number"
+    t.string   "user_name"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.string   "protal_url"
+    t.boolean  "has_promotoria",           default: false
+    t.string   "number_promotoria"
+    t.string   "name_promotoria_contact"
+    t.string   "phone_promotoria_contact"
+    t.string   "email_promotoria_contact"
+    t.boolean  "has_company",              default: false
+    t.string   "number_company"
+    t.string   "name_company_contact"
+    t.string   "phone_company_contact"
+    t.string   "email_company_contact"
+>>>>>>> b4ec1d16a7f92aff97554a3c49fc196fa145d3e7
