@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401135411) do
+ActiveRecord::Schema.define(version: 20160415131018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160401135411) do
     t.datetime "deleted_at"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "policy_id"
   end
 
   add_index "comissions", ["deleted_at"], name: "index_comissions_on_deleted_at", using: :btree
@@ -159,7 +160,6 @@ ActiveRecord::Schema.define(version: 20160401135411) do
     t.integer  "policy_type"
     t.integer  "renewal_method"
     t.integer  "payment_method"
-    t.integer  "comission_id"
     t.string   "policy_number"
     t.datetime "issued_date"
     t.datetime "expiration_date"
@@ -171,7 +171,6 @@ ActiveRecord::Schema.define(version: 20160401135411) do
   end
 
   add_index "policies", ["client_id"], name: "index_policies_on_client_id", using: :btree
-  add_index "policies", ["comission_id"], name: "index_policies_on_comission_id", using: :btree
   add_index "policies", ["deleted_at"], name: "index_policies_on_deleted_at", using: :btree
 
   create_table "prospects", force: :cascade do |t|
