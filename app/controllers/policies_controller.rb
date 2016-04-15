@@ -39,8 +39,17 @@ class PoliciesController < ApplicationController
 
 	def policy_params
 		params.require(:policy).permit(:client_id, :comission_id, :company_id,
-																	 :product_name, :policy_type, :renewal_method,
-																	 :payment_method, :issued_date,
-																	 :expiration_date, :policy_number)
+									   :product_name, :policy_type, :renewal_method,
+									   :payment_method, :issued_date,
+									   :expiration_date, :policy_number,
+									   comission_attributes: [
+									   		:id,
+									   		:first_year,
+											:second_year,
+											:third_year,
+											:fourth_year,
+											:fifth_year,
+											:post_fifth_year,
+											:base_prime])
 	end
 end
