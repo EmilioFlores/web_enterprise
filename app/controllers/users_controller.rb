@@ -54,6 +54,7 @@ class UsersController < ApplicationController
 
   def complete_registration
     @user = current_user
+    render :user_companies if @user.completed?
   end
 
   def complete_registration_update
@@ -75,7 +76,7 @@ class UsersController < ApplicationController
 
   def redirect_after_complete_registration
     if @user.completed?
-      redirect_to user_companies_path(@user)
+      redirect_to user_companies_path
     else
       redirect_to complete_registration_path
     end

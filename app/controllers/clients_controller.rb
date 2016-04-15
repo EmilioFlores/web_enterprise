@@ -42,7 +42,6 @@ class ClientsController < ApplicationController
 	end
 
 	def create
-		
 		@client = Client.new(client_params)
 		if @client.save
 			redirect_to client_path(@client)
@@ -103,7 +102,7 @@ class ClientsController < ApplicationController
 								:delegation,
 								:zip_code,
 								:country]
-		)
+		).merge(user_id: current_user.id)
 	end
 
 end

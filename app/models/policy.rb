@@ -19,6 +19,10 @@
 #
 
 class Policy < ActiveRecord::Base
+	enum policy_type: [:type1, :type2, :type3]
+	enum renewal_method: [:renewal_method1, :renewal_method2, :renewal_method3]
+	enum payment_method: [:payment_method1, :payment_method2, :payment_method3]
+
 	belongs_to :comission, inverse_of: :policy
 	belongs_to :client, inverse_of: :policies
 	belongs_to :company, inverse_of: :policies

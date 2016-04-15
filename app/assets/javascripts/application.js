@@ -28,7 +28,7 @@
 
 
 $(document).ready(function () {	
-
+  $('.datatable').DataTable();
   var toggleMenu = function() {
 	  $('header').toggleClass('toggle');
 	  $('.main').toggleClass('push');

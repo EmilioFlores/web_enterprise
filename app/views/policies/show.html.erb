@@ -1,0 +1,16 @@
+<h1><%= t('policy') %>: <%= @policy.id %></h1>
+<hr>
+<h4><%= t('client') %>:<%= @policy.client.full_name %></h4>
+<h4><%= t('product_name') %>:<%= @policy.product_name %></h4>
+<h4><%= t('company') %>:<%= @policy.company.name %></h4>
+<h4><%= t('policy_type') %>:<%= @policy.policy_type %></h4>
+<h4><%= t('renewal_method') %>:<%= @policy.renewal_method %></h4>
+<h4><%= t('payment_method') %>:<%= @policy.payment_method %></h4>
+<h4><%= t('comission') %>:<%= @policy.comission %></h4>
+<h4><%= t('policy_number') %>:<%= @policy.policy_number %></h4>
+<h4><%= t('issued_date') %>:<%= @policy.issued_date %></h4>
+<h4><%= t('expiration_date') %>:<%= @policy.expiration_date %></h4>
+
+<div class="bot-nav-btns">
+	<%= link_to t('edit'), edit_policy_path(@policy), class: 'btn btn-primary' %>	
+</div>

@@ -30,3 +30,12 @@
 .right-text{
 	text-align: right;
 }
+
+.hidden_div{
+	display: none;
+}
+
+html,
+body{
+	height: 100%;
+}

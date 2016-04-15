@@ -37,7 +37,7 @@
 class User < ActiveRecord::Base
   acts_as_paranoid
   enum marital_status: [:single, :married, :widowed]
-  enum status: [:registered, :completed]
+  enum status: [:registered, :completed, :enable, :disable]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -66,7 +66,9 @@ class User < ActiveRecord::Base
   end
 
   def update_status
-    return if completed?
+    return if enable?
     self.status = 'completed' if registration_attributes?
+    return unless completed?
+    self.status = 'enable' if company_users.count > 0
   end
 end
