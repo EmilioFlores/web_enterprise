@@ -2,17 +2,21 @@
 	<div class="container-fluid">
 		<div class="row">
 	    <div class="col-md-4">
-	    	<%= f.association :client, label: t('client'), collection: current_user.clients.order(:last_name), label_method: :full_name %>
+	    	<%= f.association :client, label: t('client'), collection: current_user.clients.order(:last_name), label_method: :full_name, selected: @policy.client_id%>
 	    </div>
 	    <div class="col-md-4">
-	    	<%= f.association :comission, label: t('comission') %>
+	    	<%= f.association :comission, label: t('comission'), selected: @policy.comission_id %>
 	    </div>
 	    <div class="col-md-4">
-	    	<%= f.association :company, label: t('company') %>
+	    	<%= f.association :company, label: t('company'), selected: @policy.company_id %>
+	    </div>
+	    <div class="col-md-3">
+	    	<%= f.input :policy_number, label: t('product_number') %>
 	    </div>
 	    <div class="col-md-3">
 	    	<%= f.input :product_name, label: t('product_name') %>
 	    </div>
+	    <div class="col-md-6"></div>
 	    <div class="col-md-3">
 	    	<%= f.input :policy_type, label: t('policy_type') %>
 	    </div>

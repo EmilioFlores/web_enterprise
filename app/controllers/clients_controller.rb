@@ -23,10 +23,10 @@
 #
 
 class ClientsController < ApplicationController
+	before_filter :check_session
 
 	def index
-		
-		@clients = Client.all();
+		@clients = current_user.clients
 	end
 
 	def show
@@ -61,6 +61,7 @@ class ClientsController < ApplicationController
 	end
 
 	private
+
 	def client_params
 		params.require(:client).permit(
 			:first_name,

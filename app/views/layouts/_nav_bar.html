@@ -16,6 +16,11 @@
 				<li><a href="#contact">Contact</a></li>
 				<li><a href="<%= policies_path %>"><%= t('policies') %></a></li>
 				<li><a href="<%= clients_path %>"><%= t('clients') %></a></li>
+				<li>
+					<%= link_to destroy_user_session_path, method: :delete do %>
+						<%= t('logout') %>
+					<% end %>
+				</li>
 			</ul>
 		</div>
 	</div>
