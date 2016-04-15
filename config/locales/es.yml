@@ -187,6 +187,19 @@ es:
   middle_name: Segundo Nombre
   name: Nombre
   next_events: Eventos Próximos
+  select_a_gender: Selecciona un Genero
+  married_date: Fecha de Matrimonio
+  remove: Remover
+  offsprings: Hijos
+  country: País
+  zip_code: Código Postal
+  addresses: Direcciones
+  street: Calle
+  exterior_number: Número Exterior
+  interior_number: Número Interior
+  city: Ciudad
+  state: Estado
+  delegation: Delegación
   number:
     currency:
       format:
