@@ -34,3 +34,8 @@
 .hidden_div{
 	display: none;
 }
+
+html,
+body{
+	height: 100%;
+}

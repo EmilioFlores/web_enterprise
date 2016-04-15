@@ -102,7 +102,7 @@ class ClientsController < ApplicationController
 								:delegation,
 								:zip_code,
 								:country]
-		)
+		).merge(user_id: current_user.id)
 	end
 
 end
