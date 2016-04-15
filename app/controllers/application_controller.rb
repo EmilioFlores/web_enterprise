@@ -7,11 +7,12 @@ class ApplicationController < ActionController::Base
 
   def set_session_locale
     I18n.locale = user_signed_in? ? current_user.locale.to_sym : 
-    	I18n.default_locale
+      I18n.default_locale
   end
 
-  def validate_user
-  	redirect_to new_user_session_path unless current_user
 
+  def check_session
+    redirect_to new_user_session_path unless current_user
   end
+
 end

@@ -1,4 +1,5 @@
 class PoliciesController < ApplicationController
+	before_filter :check_session
 
 	def index
 		@policies = Policy.all()
@@ -40,6 +41,6 @@ class PoliciesController < ApplicationController
 		params.require(:policy).permit(:client_id, :comission_id, :company_id,
 																	 :product_name, :policy_type, :renewal_method,
 																	 :payment_method, :issued_date,
-																	 :expiration_date)
+																	 :expiration_date, :policy_number)
 	end
 end
