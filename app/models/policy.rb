@@ -23,7 +23,9 @@ class Policy < ActiveRecord::Base
 	enum renewal_method: [:renewal_method1, :renewal_method2, :renewal_method3]
 	enum payment_method: [:payment_method1, :payment_method2, :payment_method3]
 
-	belongs_to :comission, inverse_of: :policy
+	has_one :comission, inverse_of: :policy
+	accepts_nested_attributes_for :comission, allow_destroy: true
+
 	belongs_to :client, inverse_of: :policies
 	belongs_to :company, inverse_of: :policies
 end

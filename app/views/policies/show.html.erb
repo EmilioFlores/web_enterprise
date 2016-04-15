@@ -1,8 +1,8 @@
 <h1><%= t('policy') %>: <%= @policy.id %></h1>
 <hr>
-<h4><%= t('client') %>:<%= @policy.client.full_name %></h4>
+<h4><%= t('client') %>:<%= @policy.client.full_name if @policy.client %></h4>
 <h4><%= t('product_name') %>:<%= @policy.product_name %></h4>
-<h4><%= t('company') %>:<%= @policy.company.name %></h4>
+<h4><%= t('company') %>:<%= @policy.company.name if @policy.company %></h4>
 <h4><%= t('policy_type') %>:<%= @policy.policy_type %></h4>
 <h4><%= t('renewal_method') %>:<%= @policy.renewal_method %></h4>
 <h4><%= t('payment_method') %>:<%= @policy.payment_method %></h4>
