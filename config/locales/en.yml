@@ -191,6 +191,15 @@ en:
   married_date: Date of Marriage
   remove: Remove
   offsprings: Offsprings
+  country: Country
+  zip_code: ZIP Code
+  addresses: Addresses
+  street: Street
+  exterior_number: Exterior Number
+  interior_number: Interior Number
+  city: City
+  state: State
+  delegation: Delegation
   number:
     currency:
       format:
