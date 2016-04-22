@@ -2,17 +2,17 @@
 #
 # Table name: referrals
 #
-#  id          		:integer  	not null, primary key
-#  referrer_id 		:integer
-#  referee_id  		:integer
-#  first_name 		:string
-#  second_name 		:string
-#  last_name 		:string
+#  id               :integer          not null, primary key
+#  referrer_id      :integer
+#  referee_id       :integer
+#  deleted_at       :datetime
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  first_name       :string
+#  second_name      :string
+#  last_name        :string
 #  second_last_name :string
-#  email 			:string
-#  deleted_at  		:datetime
-#  created_at  		:datetime   not null
-#  updated_at  		:datetime   not null
+#  email            :string
 #
 
 class Referral < ActiveRecord::Base

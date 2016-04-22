@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   post '/set_locale', to: 'users#set_locale', as: :set_user_locale
 
-
+  resources :prospects
   resources :clients
   resources :policies
   resources :referrals

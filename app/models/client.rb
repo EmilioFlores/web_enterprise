@@ -20,6 +20,8 @@
 #  deleted_at       :datetime
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  client_prospect  :boolean          default(FALSE)
+#  client           :boolean          default(FALSE)
 #
 
 class Client < ActiveRecord::Base
@@ -42,6 +44,23 @@ class Client < ActiveRecord::Base
 
 	enum marital_status: [:single, :married, :widowed]
 	enum gender: [:male, :female, :other]
+
+	scope :real_clients, -> { where(real_client: true) }
+	scope :client_prospects, -> { where(client_prospect: true, real_client: false) }
+	scope :prospects, -> { where(real_client: false, client_prospect: false) }
+	scope :any_prospects, -> {where(real_client: false)}
+
+	def real_client?
+		real_client
+	end
+
+	def client_prospect?
+		client_prospect && !real_client
+	end
+
+	def prospect?
+		!real_client && !client_prospect
+	end
 
 	def full_name
 		return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
