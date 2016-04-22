@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :clients
   resources :policies
+  resources :referrals
 
   ###################################USERS######################################
 

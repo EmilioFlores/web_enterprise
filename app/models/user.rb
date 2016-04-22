@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
 
   has_many :addresses, inverse_of: :user
   has_many :clients, inverse_of: :user
-  has_many :referrals, inverse_of: :user
+  has_many :referrals, foreign_key: "referrer_id", class_name: 'Referral'
   has_many :company_users, inverse_of: :user
 
   validates :phone_number, numericality: true, on: :update
@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :company_users, allow_destroy: true
 
   def full_name
-    return first_name + ' ' + second_name + ' ' + last_name + ' ' + second_last_name
+    return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
   end
 
   private

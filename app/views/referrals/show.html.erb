@@ -1,0 +1,8 @@
+<h1><%= t('referral') %>: <%= @referral.full_name %></h1>
+<hr>
+<h4><%= t('email') %>: <%= @referral.email %> <h4>
+
+<div class="bot-nav-btns">
+  	<%= link_to 'Back to index', referrals_path, class: "btn btn-default" %>
+	<%= link_to t('edit'), edit_referral_path(@referral), class: 'btn btn-primary' %>	
+</div>

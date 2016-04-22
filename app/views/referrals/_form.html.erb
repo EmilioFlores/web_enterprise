@@ -1,0 +1,30 @@
+<%= simple_form_for @referral do |f| %>
+	<div class="container-fluid">
+		<div class="row">
+		    <div class="col-md-3">
+		    	<%= f.input :first_name, label: t('name') %>
+		    </div>
+			<div class="col-md-3">
+				<%= f.input :second_name, label: t('middle_name')%>
+			</div>
+			<div class="col-md-3">
+				<%= f.input :last_name, label: t('last_name') %>
+			</div>
+			<div class="col-md-3">
+				<%= f.input :second_last_name, label: t('second_last_name') %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<%= f.input :email, label: t('email') %>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="bot-nav-btns">
+  	<%= link_to 'Back to index', referrals_path, class: "btn btn-default" %>
+  	<%= f.submit "Submit", class: "btn btn-primary" %>
+	</div>
+
+<% end %>

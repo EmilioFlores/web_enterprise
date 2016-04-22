@@ -1,0 +1,22 @@
+<table id="referralsTable" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Show</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @referrals.each do |referral| %>
+      <tr>
+        <td><%= referral.full_name %></td>
+        <td><%= referral.email %></td>
+        <td><%= link_to 'Show', referral %></td>
+        <td><%= link_to 'Edit', edit_referral_path(referral) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Referral", new_referral_path %>
