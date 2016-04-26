@@ -10,6 +10,7 @@
 			<a class="navbar-brand" href="#">AGENTplus</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
+			<% if current_user %>
 			<ul class="nav navbar-nav">
 				<li ><a href="#">Home</a></li>
 				<li><a href="#about">About</a></li>
@@ -19,12 +20,15 @@
 				<li><a href="<%= prospects_path %>"><%= t('prospects') %></a></li>
 				<li><a href="<%= referrals_path %>"><%= t('referrals') %></a></li>
 				<li><a href="<%= calendar_path %>"><%= t('calendar') %></a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<%= link_to destroy_user_session_path, method: :delete do %>
-						<%= t('logout') %>
+					<%= t('logout') %>
 					<% end %>
 				</li>
 			</ul>
+			<% end %>	
 		</div>
 	</div>
 </nav>
