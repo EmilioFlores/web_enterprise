@@ -1,0 +1,24 @@
+
+<h1><%= t('prospect') %>: <%= @prospect.full_name %></h1>
+<hr>
+<h4><%= t('email') %>: <%= @prospect.email %> <h4>
+<h4><%= t('birth_date') %>: <%= @prospect.birth_date %> <h4>
+<h4><%= t('gender') %>: <%= t(@prospect.gender) %> <h4>
+<h4><%= t('phone_number') %>: <%= @prospect.phone_number %> <h4>
+<h4><%= t('cellphone_number') %>: <%= @prospect.cellphone_number %> <h4>
+<h4><%= t('has_kids') %>: <%= @prospect.has_kids ? t('yes') : t('no') %> <h4>
+<h4><%= t('is_vip') %>: <%= @prospect.is_vip ? t('yes') : t('no') %> <h4>
+<h4><%= t('client_since') %>: <%= @prospect.client_since %> <h4>
+
+<hr>
+<h2><%= t('family') %></h2>
+<% unless @prospect.spouses.empty? %>
+	<h4><%= t('spouse') %>: <%= @prospect.spouses.first.full_name %></h4>
+<% else %>
+	<h4><%= t('no_spouse') %></h4>
+<% end %>
+
+
+<div class="bot-nav-btns">
+	<%= link_to t('edit'), edit_prospect_path(@prospect), class: 'btn btn-primary' %>	
+</div>

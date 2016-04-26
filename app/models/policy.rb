@@ -7,7 +7,6 @@
 #  policy_type     :integer
 #  renewal_method  :integer
 #  payment_method  :integer
-#  comission_id    :integer
 #  policy_number   :string
 #  issued_date     :datetime
 #  expiration_date :datetime

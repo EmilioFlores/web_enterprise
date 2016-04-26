@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: policies
+#
+#  id              :integer          not null, primary key
+#  client_id       :integer
+#  policy_type     :integer
+#  renewal_method  :integer
+#  payment_method  :integer
+#  policy_number   :string
+#  issued_date     :datetime
+#  expiration_date :datetime
+#  product_name    :string
+#  deleted_at      :datetime
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  company_id      :integer
+#
+
 class PoliciesController < ApplicationController
 	before_filter :check_session
 

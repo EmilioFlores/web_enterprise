@@ -1,0 +1,33 @@
+<h1>Prospects list</h1>
+
+<table id="clientsTable" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Birth Date</th>
+      <th>Phone Number</th>
+      <th>Cellphone Number</th>
+      <th>Client Since</th>
+      <td>Show</td>
+     <td>Edit</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.full_name %></td>
+        <td><%= prospect.email %></td>
+        <td><%= prospect.birth_date.to_date %></td>
+        <td><%= prospect.phone_number %></td>
+        <td><%= prospect.cellphone_number %></td>
+        <td><%= prospect.client_since.to_date %></td>
+        <td><%= link_to 'Show', prospect %></td>
+        <td><%= link_to 'Edit', edit_prospect_path(prospect) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "New Prospect", new_prospect_path %>

@@ -20,13 +20,15 @@
 #  deleted_at       :datetime
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  client_prospect  :boolean          default(FALSE)
+#  client           :boolean          default(FALSE)
 #
 
 class ClientsController < ApplicationController
 	before_filter :check_session
 
 	def index
-		@clients = current_user.clients
+		@clients = current_user.clients.real_clients
 	end
 
 	def show
@@ -103,7 +105,7 @@ class ClientsController < ApplicationController
 								:delegation,
 								:zip_code,
 								:country]
-		).merge(user_id: current_user.id)
+		).merge(user_id: current_user.id, real_client: true, client_prospect: true)
 	end
 
 end

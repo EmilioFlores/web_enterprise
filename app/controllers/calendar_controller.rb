@@ -15,10 +15,17 @@
 #  email            :string
 #
 
-class Referral < ActiveRecord::Base
-	belongs_to :referrer, class_name: 'User', inverse_of: :referrals
-	
-	def full_name
-		return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
+class ReferralsController < ApplicationController
+	before_action :find_model, only: [:show, :edit, :update]
+
+
+	def index
+		@data = Client.all.map { |c| c.birth_date.to_s }
+		
 	end
+
+	def show
+	end
+
+
 end
