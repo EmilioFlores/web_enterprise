@@ -23,6 +23,7 @@ es:
         one: Usuario
         other: Usuarios
   add: Agregar
+  comission: Comision
   birth_date: Fecha de Nacimiento
   cellphone_number: Teléfono Celular
   client_since: Cliente Desde
