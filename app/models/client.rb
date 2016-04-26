@@ -66,4 +66,16 @@ class Client < ActiveRecord::Base
 		return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
 	end
 
+	def title
+		"#{first_name} #{last_name}"
+	end
+
+	def date
+		birth_date
+	end
+
+	def as_json(options={})
+	  super(only: [], methods: [:title, :birth_date])
+	end
+
 end
