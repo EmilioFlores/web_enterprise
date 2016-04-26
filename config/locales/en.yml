@@ -23,6 +23,7 @@ en:
         one: User
         other: Users
   add: Add
+  comission: Comission
   birth_date: Birth Date
   cellphone_number: Mobile Number
   client_since: Client Since
