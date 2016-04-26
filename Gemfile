@@ -24,6 +24,7 @@ gem 'enum_help'
 gem 'paranoia', '2.0.4'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails',
                             branch: 'master', submodules: true
+gem 'fullcalendar-rails'
 gem 'slim-rails'
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
