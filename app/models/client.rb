@@ -66,16 +66,26 @@ class Client < ActiveRecord::Base
 		return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
 	end
 
+
+	# Full calendar data
 	def title
 		"#{first_name} #{last_name}"
 	end
 
 	def date
-		birth_date
+		birth_date.strftime("%Y-%m-%d") if birth_date
+	end
+
+	def link
+		"/clients/#{id}"
+	end
+
+	def color
+		"#F00"
 	end
 
 	def as_json(options={})
-	  super(only: [], methods: [:title, :birth_date])
+	  super(only: [], methods: [:title, :date, :link, :color])
 	end
 
 end
