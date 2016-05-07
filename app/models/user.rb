@@ -37,14 +37,12 @@
 class User < ActiveRecord::Base
   acts_as_paranoid
   enum marital_status: [:single, :married, :widowed]
-  enum status: [:registered, :completed, :enable, :disable]
+  enum status: [:disabled, :enabled]
   enum user_type: [:regular, :admin]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  before_save :update_status
 
   has_many :addresses, inverse_of: :user
   has_many :clients, inverse_of: :user
@@ -64,12 +62,5 @@ class User < ActiveRecord::Base
 
   def registration_attributes?
     first_name && last_name && phone_number
-  end
-
-  def update_status
-    return if enable?
-    self.status = 'completed' if registration_attributes?
-    return unless completed?
-    self.status = 'enable' if company_users.count > 0
   end
 end

@@ -28,7 +28,14 @@ Rails.application.routes.draw do
 
   ##############################################################################
 
-  get '/admin_index', to: 'admin#index', as: :admin_index
+  get '/admin/index', to: 'admin#index', as: :admin_index
+  get '/admin/users_manage', to: 'admin#users_manage',
+                             as: :admin_users_manage
+  post '/admin/users_manage', to: 'admin#update_user'
+
+  get '/admin/referrals_manage', to: 'admin#referrals_manage',
+                                 as: :admin_referrals_manage
+
 
   ##############################################################################
 

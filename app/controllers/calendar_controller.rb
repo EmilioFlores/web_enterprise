@@ -1,5 +1,6 @@
 class CalendarController < ApplicationController
-
+  before_filter :check_session
+  
 	def index
 		respond_to do |format|
 			format.json { render :json => Client.all.to_json }

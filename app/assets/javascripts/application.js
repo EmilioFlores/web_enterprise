@@ -24,9 +24,9 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require fullcalendar
+//= require bootstrap-switch
 //= require_tree .
 //= require highcharts
-
 
 $(document).ready(function () {	
   $('.datatable').DataTable();
@@ -57,8 +57,5 @@ $(document).ready(function () {
 	}
 
 });
-
-
-
 
 //= require turbolinks
