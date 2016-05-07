@@ -5,7 +5,7 @@ $(function(){
     onSwitchChange: function(){
       checkbox = this;
       $.ajax({
-        url: '/admin/user_manage',
+        url: '/admin/users_manage',
         type: 'POST',
         data: { enabled: $(checkbox).is(':checked'),
                 id: $(checkbox).data('userId')},
