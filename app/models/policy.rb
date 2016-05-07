@@ -33,4 +33,30 @@ class Policy < ActiveRecord::Base
   validates :client, presence: true
   validates :company, presence: true
 
+
+
+  # Full calendar data
+	def title
+		name = self.client.full_name if self.client
+		"Policy end from: #{name}"
+	end
+
+	def date
+		expiration_date.strftime("%Y-%m-%d") if expiration_date
+	end
+
+	def link
+		"/policies/#{id}"
+	end
+
+	def color
+		"#00F"
+	end
+
+	def as_json(options={})
+	  super(only: [], methods: [:title, :date, :link, :color])
+end
+
+
+
 end
