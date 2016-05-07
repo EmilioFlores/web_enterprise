@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(email: 'admin@agent.com', password: 'administrador', password_confirmation: 'administrador', user_type: 1)
 Company.create(name:'A.N.A. Compañía de Seguros, S.A. de C.V.', url:'http://www.anaseguros.com.mx/')
 Company.create(name:'ABA Seguros, S.A. de C.V.', url:'http://www.abaseguros.com/')
 Company.create(name:'ACE Seguros, S.A.', url:'http://www.acelatinamerica.com/')
@@ -85,7 +86,6 @@ Company.create(name:'XL Seguros México, S.A. de C.V.', url:'http://www.xlinsura
 Company.create(name:'Zurich Santander Seguros México, S.A.', url:'http://www.santander.com.mx/')
 Company.create(name:'Zurich Vida, Compañía de Seguros, S.A.', url:'http://www.zurich.com.mx/')
 Company.create(name:'Zurich, Compañía de Seguros, S.A.', url:'http://www.zurich.com.mx/')
-
 
 Client.create(user_id: 1, first_name: 'Enrique', last_name: 'Hernandez', birth_date: '09/04/2016', gender: 1,  marital_status: 1,  email: 'enrique_hernandez@hotmail.com', phone_number: 83000304, cellphone_number: 842389432894, client_since: '09/04/2016')
 Client.create(user_id: 1, first_name: 'Enrique', last_name: 'Hernandez', birth_date: '09/04/2016', gender: 1,  marital_status: 1,  email: 'enrique_hernandez1@hotmail.com', phone_number: 83000304, cellphone_number: 842389432894, client_since: '09/04/2016')
