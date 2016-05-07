@@ -16,5 +16,6 @@ class Company < ActiveRecord::Base
 	has_many :company_users, inverse_of: :company
 
   validates :name, presence: true
-
+  validates :url, presence: true
+  validates_format_of :url, with: URI.regexp
 end
