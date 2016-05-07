@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(email: 'admin@agent.com', password: '1234', password_confirmation: '1234', user_type: 1)
+
+
 Client.create(user_id: 1, first_name: 'Enrique', last_name: 'Hernandez', birth_date: '09/04/2016', gender: 1,  marital_status: 1,  email: 'enrique_hernandez@hotmail.com', phone_number: 83000304, cellphone_number: 842389432894, client_since: '09/04/2016')
 Client.create(user_id: 1, first_name: 'Enrique', last_name: 'Hernandez', birth_date: '09/04/2016', gender: 1,  marital_status: 1,  email: 'enrique_hernandez1@hotmail.com', phone_number: 83000304, cellphone_number: 842389432894, client_since: '09/04/2016')
 Client.create(user_id: 1, first_name: 'Enrique', last_name: 'Hernandez', birth_date: '09/04/2016', gender: 1,  marital_status: 1,  email: 'enrique_hernandez2@hotmail.com', phone_number: 83000304, cellphone_number: 842389432894, client_since: '09/04/2016')
