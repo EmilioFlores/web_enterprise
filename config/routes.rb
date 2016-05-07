@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
-  root 'welcome#home'
+  root 'calendar#index'
 
   get '/disabled', to: 'welcome#user_disabled', as: :user_disabled
 
