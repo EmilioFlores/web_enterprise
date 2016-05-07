@@ -17,14 +17,15 @@
 <!-- 				<li><a href="#about">About</a></li>
 				<li><a href="#contact">Contact</a></li> -->
 				<% if !current_user.uncompleted? %>
-					<li><a href="<%= user_path%>"><%= t('Info') %></a></li>
+					<li><a href="<%= user_path%>"><%= t('info') %></a></li>
 					<li><a href="<%= policies_path %>"><%= t('policies') %></a></li>
 					<li><a href="<%= clients_path %>"><%= t('clients') %></a></li>
 					<li><a href="<%= prospects_path %>"><%= t('prospects') %></a></li>
 					<li><a href="<%= referrals_path %>"><%= t('referrals') %></a></li>
 					<li><a href="<%= calendar_path %>"><%= t('calendar') %></a></li>
 				<% else %>
-					<li><a href="<%= complete_registration_path%>"><%= t('edit_info') %></a></li>
+					<li><a href="<%= complete_registration_path%>"><%= t('complete_info') %></a></li>
+					<li><a href="<%= user_path%>"><%= t('Info') %></a></li>
 				<% end %>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

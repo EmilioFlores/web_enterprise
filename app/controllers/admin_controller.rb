@@ -15,6 +15,16 @@ class AdminController < ApplicationController
     @referrals = Referral.pending
   end
 
+  def destroy_referral
+    @referrals = Referral.find(params[:id])
+    if @referrals.destroy
+      flash[:success] = t('referral_destroy')
+    else
+      flash[:error] = t('referral_destroy_error')
+    end
+    redirect_to admin_referrals_manage_path
+  end
+
   def update_user
     @user = User.find(params[:id])
     if params[:enabled] == 'true'

@@ -35,4 +35,12 @@ class CompanyUser < ActiveRecord::Base
   validates :company, presence: true
 
   validates :agent_number, presence: true
+
+  after_save :check_user_status
+
+  private
+
+  def check_user_status
+    user.send(:update_registration_status)
+  end
 end

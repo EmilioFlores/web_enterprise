@@ -1,5 +1,5 @@
 class CalendarController < ApplicationController
-	before_filter :check_session
+	before_filter :check_session_and_completed_user
 	before_action :find_modules, only: [:index]
 	def index
 		respond_to do |format|

@@ -41,6 +41,9 @@ Rails.application.routes.draw do
   get '/admin/referrals_manage', to: 'admin#referrals_manage',
                                  as: :admin_referrals_manage
 
+  delete 'admin/delete_referral/:id', to: 'admin#destroy_referral',
+                                      as: :admin_destroy_referral
+
 
   ##############################################################################
 

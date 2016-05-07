@@ -18,7 +18,7 @@
           <td><%= referral.referrer.full_name %></td>
           <td><%= referral.email %></td>
           <td><%= referral.created_at.try(:strftime, '%d/%m/%Y') %></td>
-          <td><%= check_box_tag 'enabled', 'hidden', user.enabled?, class: 'enabled-checkbox form-control', id: "enabled-checkbox", data: {user_id: user.id} %> </td>
+          <td><%= link_to t('destroy').capitalize, admin_destroy_referral_path(referral), method: :delete, class: 'btn btn-small btn-danger', data: { confirm: t('are_you_sure')}%></td>
         </tr>
       <% end %>
     </tbody>

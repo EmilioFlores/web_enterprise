@@ -50,7 +50,7 @@ class ReferralsController < ApplicationController
 			render action: "edit"
 		end
 	end
-
+	
 	private
 	def find_model
 		@referral = Referral.find(params[:id]) if params[:id]
