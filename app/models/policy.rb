@@ -32,6 +32,7 @@ class Policy < ActiveRecord::Base
 
   validates :client, presence: true
   validates :company, presence: true
+  validates :comission, presence: true
 
 
 

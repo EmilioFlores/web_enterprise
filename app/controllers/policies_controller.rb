@@ -30,6 +30,7 @@ class PoliciesController < ApplicationController
 
 	def new
 		@policy = Policy.new
+		@policy.build_comission
 	end
 
 	def edit

@@ -32,47 +32,40 @@
 		</div>
 		<hr>
 
-		<div id="comission_form">
-			<h2><%= t('comission') %></h2>
-			<div class="items">
-			<%= f.nested_fields_for :comission do |ff| %>
-				<fieldset class="item">
-					<div class="row">
-					    <div class="col-md-3">
-					    	<%= ff.input :first_year, label: t('first_year') %>
-					    </div>
-						<div class="col-md-3">
-							<%= ff.input :second_year, label: t('second_year')%>
-						</div>
-						<div class="col-md-3">
-							<%= ff.input :third_year, label: t('third_year') %>
-						</div>
-						<div class="col-md-3">
-							<%= ff.input :fourth_year, label: t('fourth_year') %>
-						</div>
+		<h2><%= t('comission') %></h2>
+		<%= f.nested_fields_for :comission do |ff| %>
+			<fieldset class="item">
+				<div class="row">
+				    <div class="col-md-3">
+				    	<%= ff.input :first_year, label: t('first_year') %>
+				    </div>
+					<div class="col-md-3">
+						<%= ff.input :second_year, label: t('second_year')%>
 					</div>
-					<div class="row">
-					    <div class="col-md-3">
-					    	<%= ff.input :fifth_year, label: t('fifth_year') %>
-					    </div>
-						<div class="col-md-3">
-							<%= ff.input :post_fifth_year, label: t('post_fifth_year')%>
-						</div>
-						<div class="col-md-3">
-							<%= ff.input :base_prime, label: t('base_prime') %>
-						</div>
+					<div class="col-md-3">
+						<%= ff.input :third_year, label: t('third_year') %>
 					</div>
+					<div class="col-md-3">
+						<%= ff.input :fourth_year, label: t('fourth_year') %>
+					</div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3">
+				    	<%= ff.input :fifth_year, label: t('fifth_year') %>
+				    </div>
+					<div class="col-md-3">
+						<%= ff.input :post_fifth_year, label: t('post_fifth_year')%>
+					</div>
+					<div class="col-md-3">
+						<%= ff.input :base_prime, label: t('base_prime') %>
+					</div>
+				</div>
 
-					<a href="#" class="remove btn-sm btn-danger"> - <%= t('remove') %></a>
-
-					<%= ff.hidden_field :id %>
-					<%= ff.hidden_field :_destroy %>
-				</fieldset>
-			<% end %>
-			</div>
-			<a href="#" class="add btn-sm btn-success">+ <%= t('add') + ' ' + t('comission') %></a>
-		</div>
-
+				<%= ff.hidden_field :id %>
+				<%= ff.hidden_field :_destroy %>
+			</fieldset>
+		<% end %>
+	</div>
 
 	<div class="bot-nav-btns">
   	<%= link_to 'Back', :back, class: "btn btn-default" %>
