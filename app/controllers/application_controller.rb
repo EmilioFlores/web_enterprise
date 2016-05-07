@@ -15,4 +15,7 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_path unless current_user
   end
 
+  def check_admin
+    redirect_to destroy_user_session_path unless current_user.admin?
+  end
 end

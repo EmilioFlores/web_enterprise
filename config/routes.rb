@@ -26,4 +26,10 @@ Rails.application.routes.draw do
   get '/calendar', to: 'calendar#index',  as: :calendar
 
 
+  ##############################################################################
+
+  get '/admin_index', to: 'admin#index', as: :admin_index
+
+  ##############################################################################
+
 end
