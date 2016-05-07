@@ -46,7 +46,7 @@ class Offspring < ActiveRecord::Base
 	end
 
 	def color
-		"#F00"
+		"#d9821e"
 	end
 
 	def as_json(options={})

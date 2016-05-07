@@ -51,7 +51,7 @@ class Policy < ActiveRecord::Base
 	end
 
 	def color
-		"#00F"
+		"#4e8ad9"
 	end
 
 	def as_json(options={})

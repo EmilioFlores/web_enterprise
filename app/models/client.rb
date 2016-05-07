@@ -89,7 +89,7 @@ class Client < ActiveRecord::Base
 	end
 
 	def color
-		"#F00"
+		"#46d93c"
 	end
 
 	def as_json(options={})

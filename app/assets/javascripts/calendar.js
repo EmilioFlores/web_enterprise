@@ -4,7 +4,7 @@ $(function(){
 
 	if (action == 'index') {
 
-		$('#faggot_calendar').fullCalendar({
+		$('#my_calendar').fullCalendar({
 			events: function(start, end, timezone, callback) {
 		        $.ajax({
 					method: 'GET',

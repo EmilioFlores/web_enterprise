@@ -47,7 +47,7 @@ class Spouse < ActiveRecord::Base
 	end
 
 	def color
-		"#F00"
+		"#7566d9"
 	end
 
 	def as_json(options={})
