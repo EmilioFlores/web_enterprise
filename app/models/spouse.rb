@@ -30,4 +30,29 @@ class Spouse < ActiveRecord::Base
 	def full_name
 		return first_name + ' ' + second_name + ' ' + last_name + ' ' + second_last_name
 	end
+
+
+	# Full calendar data
+	def title
+		
+		name = self.client.full_name if self.client 
+		"Birthdate of spause #{first_name} #{last_name} From #{name}"
+	end
+
+	def date
+		birth_date.strftime("%Y-%m-%d") if birth_date
+	end
+
+	def link
+		"/clients/#{id}"
+	end
+
+	def color
+		"#F00"
+	end
+
+	def as_json(options={})
+	  super(only: [], methods: [:title, :date, :link, :color])
+	end
+
 end
