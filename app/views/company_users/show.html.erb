@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to t('back'), user_path, :class => 'btn btn-primary' %>
+  </div>
+    <div class="col-md-6">
+    <%= link_to t('edit'), edit_user_company_path(@company_user), :class => 'btn btn-success pull-right' %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <table class="table table-striped">
+      <thead>
+        <th>
+          <h2><%= t('user') %></h2>
+        </th>
+        <td>
+          <h2> <%= @company_user.user.full_name %></h2>
+        </td>
+
+      </thead>
+      <tr>
+        <th> <h4><%= t('company') %></h4> </th>
+        <td> <h4><%= @company_user.company.name %></h4>  </td>
+      </tr>
+      <tr>
+        <th> <h4><%= t('agent_number') %></h4> </th>
+        <td> <h4><%= @company_user.agent_number %></h4>  </td>
+      </tr>
+      <% if @company_user.has_promotoria %>
+        <tr>
+          <th colspan='2' style="text-align: center"> <h4><%= t('promotoria') %></h4> </th>
+        </tr>
+        <tr>
+          <th> <h4><%= t('number_promotoria') %></h4> </th>
+          <td> <h4><%= @company_user.number_promotoria %></h4>  </td>
+        </tr>
+        <tr>
+          <th> <h4><%= t('name_promotoria_contact') %></h4> </th>
+          <td> <h4><%= @company_user.name_promotoria_contact %></h4>  </td>
+        </tr>
+        <tr>
+          <th> <h4><%= t('phone_promotoria_contact') %></h4> </th>
+          <td> <h4><%= @company_user.phone_promotoria_contact %></h4>  </td>
+        </tr>
+        <tr>
+          <th> <h4><%= t('email_promotoria_contact') %></h4> </th>
+          <td> <h4><%= @company_user.email_promotoria_contact %></h4>  </td>
+        </tr>
+      <% end %>
+      <% if @company_user.has_company %>
+        <tr>
+          <th colspan='2' style="text-align: center"> <h4><%= t('company') %></h4> </th>
+        </tr>
+        <tr>
+          <th> <h4><%= t('number_company') %></h4> </th>
+          <td> <h4><%= @company_user.number_company %></h4>  </td>
+        </tr>
+        <tr>
+          <th> <h4><%= t('name_company_contact') %></h4> </th>
+          <td> <h4><%= @company_user.name_company_contact %></h4>  </td>
+        </tr>
+        <tr>
+          <th> <h4><%= t('phone_company_contact') %></h4> </th>
+          <td> <h4><%= @company_user.phone_company_contact %></h4>  </td>
+        </tr>
+        <tr>
+          <th> <h4><%= t('email_company_contact') %></h4> </th>
+          <td> <h4><%= @company_user.email_company_contact %></h4>  </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

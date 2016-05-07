@@ -1,7 +1,6 @@
 class CalendarController < ApplicationController
 	before_filter :check_session
-	before_action :find_clients, :find_policies, only: [:index]
-
+	before_action :find_modules, only: [:index]
 	def index
 		respond_to do |format|
 			format.json { render :json => { birth_dates: @clients.to_json,

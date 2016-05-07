@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   ###################################USERS######################################
 
   get '/user', to: 'users#profile',  as: :user
+  get '/new/user/company', to: 'users#new_company', as: :new_user_company
+  post '/new/user/company', to: 'users#create_company'
+  get '/edit/user/company/:id', to: 'users#edit_company', as: :edit_user_company
+  patch '/edit/user/company/:id', to: 'users#update_company'
 
   ##############################################################################
 

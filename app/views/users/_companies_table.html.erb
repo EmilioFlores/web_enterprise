@@ -1,28 +1,37 @@
-<div class="table-responsive">
-  <table id="policiesTable" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th>Agent Number</th>
-      <th>User name</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% current_user.company_users.each do |company_user| %>
-    <tr>
-      <td>
-        <%= link_to company_user.company.url do %>
-          <%= company_user.company.name%>
-        <% end %>
-      </td>
-      <td><%= company_user.agent_number %></td>
-      <td><%= company_user.user_name %></td>
-      <td><%= link_to 'Show', company_user %></td>
-    </tr>
-    <% end %>
-  </tbody>
-  <tfoot>
-  </tfoot>
-  </table>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to t('new_company'), new_user_company_path, class: 'btn btn-primary pull-right' %>
+  </div>
+</div>
+  <div class="col-md-12">
+    <div class="table-responsive">
+    <table id="policiesTable" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Agent Number</th>
+        <th>User name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.company_users.each do |company_user| %>
+      <tr>
+        <td>
+          <%= link_to company_user.company.url do %>
+            <%= company_user.company.name%>
+          <% end %>
+        </td>
+        <td><%= company_user.agent_number %></td>
+        <td><%= company_user.user_name %></td>
+        <td><%= link_to 'Show', company_user %></td>
+        <td><%= link_to 'Edit', edit_user_company_path(company_user) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+    </tfoot>
+    </table>
+  </div>
 </div>

@@ -73,6 +73,36 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def new_company
+    @company_user = CompanyUser.new(user_id: current_user.id)
+  end
+
+  def edit_company
+    @company_user = CompanyUser.find(params[:id])
+  end
+
+  def create_company
+    @company_user = CompanyUser.new(company_user_params)
+    if @company_user.save
+      flash[:success] = t('company_added')
+      redirect_to user_path
+    else
+      flash[:error] = t('company_user_error')
+      render :new_company
+    end
+  end
+
+  def update_company
+    @company_user = CompanyUser.find(params[:id])
+    if @company_user.update_attributes(company_user_params)
+      flash[:success] = t('company_updated')
+      redirect_to user_path
+    else
+      flash[:error] = t('company_user_update_error')
+      render :new_company
+    end
+  end
+
   private
 
   def redirect_after_complete_registration
@@ -104,5 +134,19 @@ class UsersController < ApplicationController
                                                             :phone_company_contact,
                                                             :email_company_contact
                                                             ])
+  end
+
+  def company_user_params
+    params.require(:company_user).permit(:company_id, :number_company,
+                                         :has_promotoria, :user_name, 
+                                         :has_company, :agent_number, 
+                                         :has_promotoria, :number_promotoria, 
+                                         :name_promotoria_contact, 
+                                         :phone_promotoria_contact, 
+                                         :email_promotoria_contact, 
+                                         :has_company, :number_company,
+                                         :name_company_contact, 
+                                         :phone_company_contact,
+                                         :email_company_contact).merge(user_id: current_user.id)
   end
 end

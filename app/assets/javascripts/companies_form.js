@@ -6,23 +6,22 @@ $(function(){
         $('.company-fields').show();
     }
 	$('#promotoria-fields').change(function(event) {
+        debugger
 		checkbox = event.target
-		item = $(checkbox).closest('.item')
     if($(checkbox).is(":checked")) {
-    	$('.promotoria-fields', item).show();
+    	$('.promotoria-fields').show();
     } else {
-    	$('.promotoria-fields', item).hide();
-    	$('input', $('.promotoria-fields', item)).val('');
+    	$('.promotoria-fields').hide();
+    	$('input', $('.promotoria-fields')).val('');
     }
 	});
     $('#company-fields').change(function(event) {
         checkbox = event.target
-        item = $(checkbox).closest('.item')
     if($(checkbox).is(":checked")) {
-        $('.company-fields', item).show();
+        $('.company-fields').show();
     } else {
-        $('.company-fields', item).hide();
-        $('input', $('.company-fields', item)).val('');
+        $('.company-fields').hide();
+        $('input', $('.company-fields')).val('');
     }
     });
 

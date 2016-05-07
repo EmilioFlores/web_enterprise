@@ -1,0 +1,34 @@
+h1
+  = t('new_company')
+= simple_form_for @company_user, url: new_user_company_path do |f|
+  .col-md-12
+    = f.association :company
+  .col-md-6
+    = f.input :agent_number
+  .col-md-6
+    = f.input :user_name
+  .col-md-12
+    = f.input :has_promotoria, input_html: {id: 'promotoria-fields'}
+  .promotoria-fields.hidden_div
+    .col-md-6
+      = f.input :number_promotoria
+    .col-md-6
+      = f.input :name_promotoria_contact
+    .col-md-6
+      = f.input :phone_promotoria_contact
+    .col-md-6
+      = f.input :email_promotoria_contact
+  .col-md-12
+    = f.input :has_company, input_html: {id: 'company-fields'}
+  .company-fields.hidden_div
+    .col-md-6
+      = f.input :number_company
+    .col-md-6
+      = f.input :name_company_contact
+    .col-md-6
+      = f.input :phone_company_contact
+    .col-md-6
+      = f.input :email_company_contact
+  .actions.col-md-12.bot-nav-btns
+    = link_to t('back').capitalize, :back, class: 'btn btn-default'
+    = f.submit nil, class: 'btn btn-primary'
