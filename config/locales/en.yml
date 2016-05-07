@@ -258,7 +258,7 @@ en:
       last_word_connector: ', and '
       two_words_connector: ' and '
       words_connector: ', '
-  time:
+    time:
     am: am
     formats:
       default: '%a, %d %b %Y %H:%M:%S %z'
@@ -267,3 +267,10 @@ en:
     pm: pm
   warning: Warning!
   welcome: Welcome!
+  first_year: First year
+  second_year: Second year
+  third_year: Third year
+  fourth_year: Fourth year
+  fifth_year: Fifth_year
+  base_prime: Base prime
+  post_fifth_year: Post fifth year

@@ -1,16 +1,95 @@
-<h1><%= t('policy') %>: <%= @policy.id %></h1>
-<hr>
-<h4><%= t('client') %>:<%= @policy.client.full_name if @policy.client %></h4>
-<h4><%= t('product_name') %>:<%= @policy.product_name %></h4>
-<h4><%= t('company') %>:<%= @policy.company.name if @policy.company %></h4>
-<h4><%= t('policy_type') %>:<%= @policy.policy_type %></h4>
-<h4><%= t('renewal_method') %>:<%= @policy.renewal_method %></h4>
-<h4><%= t('payment_method') %>:<%= @policy.payment_method %></h4>
-<h4><%= t('comission') %>:<%= @policy.comission %></h4>
-<h4><%= t('policy_number') %>:<%= @policy.policy_number %></h4>
-<h4><%= t('issued_date') %>:<%= @policy.issued_date %></h4>
-<h4><%= t('expiration_date') %>:<%= @policy.expiration_date %></h4>
 
-<div class="bot-nav-btns">
-	<%= link_to t('edit'), edit_policy_path(@policy), class: 'btn btn-primary' %>	
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+		<table class="table table-striped">
+			<thead>
+				<th>
+					<h2><%= t('policy') %></h2>
+				</th>
+				<td>
+					<h2> <%= @policy.id %></h2>
+				</td>
+
+			</thead>
+			<tr>
+				<th> <h4><%= t('client') %></h4>  </td>
+				<td> <h4><%= @policy.client.full_name if @policy.client %></h4> </td>
+			</tr>
+			<tr>
+				<th> <h4><%= t('product_name') %></h4> </th>
+				<td> <h4><%= @policy.product_name %></h4> </td>
+			</tr>
+			<tr>
+				<th><h4><%= t('company') %> </h4></th>
+				<td><h4><%= @policy.company.name if @policy.company %> </h4></td>
+			</tr>
+			<tr>
+				<th><h4><%= t('policy_type') %> </h4></th>
+				<td><h4><%= @policy.policy_type %> </h4></td>
+			</tr>
+			<tr>
+				<th><h4><%= t('renewal_method') %></th></th>
+				<td><h4><%= @policy.renewal_method %></h4></td>
+			</tr>
+			<tr>
+				<th><h4><%= t('payment_method') %></h4></th>
+				<td><h4><%= @policy.payment_method %></h4></td>
+			</tr>
+			<tr>
+				<th><h4><%= t('comission') %></h4></th>
+				<td>
+					<table class="table table-striped">
+						<tr>
+							<th> <h4><%= t('first_year') %></h4>  </td>
+							<td> <h4><%= @policy.comission.first_year if @policy.comission %></h4> </td>
+						</tr>
+						<tr>
+							<th> <h4><%= t('second_year') %></h4>  </td>
+							<td> <h4><%= @policy.comission.second_year if @policy.comission %></h4> </td>
+						</tr>
+						<tr>
+							<th> <h4><%= t('third_year') %></h4>  </td>
+							<td> <h4><%= @policy.comission.third_year if @policy.comission %></h4> </td>
+						</tr>
+						<tr>
+							<th> <h4><%= t('fourth_year') %></h4>  </td>
+							<td> <h4><%= @policy.comission.fourth_year if @policy.comission %></h4> </td>
+						</tr>
+						<tr>
+							<th> <h4><%= t('fifth_year') %></h4>  </td>
+							<td> <h4><%= @policy.comission.fifth_year if @policy.comission %></h4> </td>
+						</tr>
+						<tr>
+							<th> <h4><%= t('post_fifth_year') %></h4>  </td>
+							<td> <h4><%= @policy.comission.post_fifth_year if @policy.comission %></h4> </td>
+						</tr>
+						<tr>
+							<th> <h4><%= t('base_prime') %></h4>  </td>
+							<td> <h4><%= @policy.comission.base_prime if @policy.comission %></h4> </td>
+						</tr>
+					</table>
+				</td>
+
+			</tr>
+			<tr>
+				<th><h4><%= t('policy_number') %></h4></th>
+				<td><h4><%= @policy.policy_number %></h4> </td>
+			</tr>
+			<tr>
+				<th><h4><%= t('issued_date') %></h4></th>
+				<td><h4><%= @policy.issued_date %></h4></td>
+			</tr>
+			<tr>
+				<th><h4><%= t('expiration_date') %></h4></th>
+				<td><h4><%= @policy.expiration_date %></h4></td>
+			</tr>
+
+		</table>
+
+		<div class="bot-nav-btns">
+			<%= link_to t('edit'), edit_policy_path(@policy), class: 'btn btn-primary' %>
+		</div>
+
+	</div>
 </div>
