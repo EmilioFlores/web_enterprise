@@ -10,6 +10,11 @@
 #
 
 class Company < ActiveRecord::Base
+  acts_as_paranoid
+  
 	has_many :policies, inverse_of: :company
 	has_many :company_users, inverse_of: :company
+
+  validates :name, presence: true
+
 end

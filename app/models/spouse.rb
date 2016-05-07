@@ -17,8 +17,15 @@
 #
 
 class Spouse < ActiveRecord::Base
+  acts_as_paranoid
+
 	belongs_to :client, inverse_of: :spouses
 	enum gender: [:male, :female, :other]
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :birth_date, presence: true
+
 
 	def full_name
 		return first_name + ' ' + second_name + ' ' + last_name + ' ' + second_last_name

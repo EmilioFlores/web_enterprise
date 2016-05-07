@@ -1,4 +1,3 @@
-
 class CalendarController < ApplicationController
 
 	def index
@@ -10,6 +9,5 @@ class CalendarController < ApplicationController
 
 	def show
 	end
-
 
 end
