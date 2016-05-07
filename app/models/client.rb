@@ -75,7 +75,7 @@ class Client < ActiveRecord::Base
 
 	# Full calendar data
 	def title
-		"#{first_name} #{last_name}"
+		"Birthdate: #{first_name} #{last_name}"
 	end
 
 	def date

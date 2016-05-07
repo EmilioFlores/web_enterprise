@@ -12,9 +12,16 @@ $(function(){
 					url: '/calendar.json',
 		            success: function(data) {
 		            	var clean_data = []
-		            	for (var i = data.length - 1; i >= 0; i--) {
-		            		if (data[i].date) {
-		            			clean_data.push(data[i]);
+		            	birth_dates = JSON.parse(data.birth_dates);
+		            	policies = JSON.parse(data.policies);
+		            	for (var i = birth_dates.length - 1; i >= 0; i--) {
+		            		if (birth_dates[i].date) {
+		            			clean_data.push(birth_dates[i]);
+		            		}
+		            	};
+		            	for (var i = policies.length - 1; i >= 0; i--) {
+		            		if (policies[i].date) {
+		            			clean_data.push(policies[i]);
 		            		}
 		            	};
 		            	console.log(data);
