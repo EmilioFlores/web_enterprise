@@ -58,7 +58,8 @@ a {
 
 header {
     z-index: 9999;
-    padding-bottom: 20px;
+    height: 51px;
+    margin-bottom: 10px;
 }
 
 .reveal {
@@ -85,10 +86,8 @@ header {
 
 .main {
     background: #f6f6f6;
-    /*float: right;*/
     height: 100%;
     width: 100%;
-    margin: 20px 0;
     padding: 0;
     transition: .6s ease-in;
     overflow: hidden;
