@@ -1,4 +1,7 @@
 h2
-  = t('complete_registration')
+  - if current_user.completed?
+    = t('edit_info')
+  - else
+    = t('complete_registration')
 .row
   = render 'users/complete_registration_form'

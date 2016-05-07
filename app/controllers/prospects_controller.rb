@@ -25,7 +25,7 @@
 #
 
 class ProspectsController < ApplicationController
-	before_filter :check_session
+	before_filter :check_session_and_completed_user
 
 	def index
 		@prospects = current_user.clients.any_prospects
@@ -75,20 +75,20 @@ class ProspectsController < ApplicationController
 																	 											:last_name, 
 																	 											:second_last_name, 
 																	 											:birth_date, 
-																	 											:married_date, :gender],
+																	 											:married_date, :gender, :_destroy],
 																	 offsprings_attributes: [:id, :first_name,  
 																	 												 :second_name,  
 																	 												 :last_name, 
 																	 												 :second_last_name, 
 																	 												 :birth_date, 
-																	 												 :gender],
+																	 												 :gender, :_destroy],
 																	 addresses_attributes: [:id, :user_id, 
 																													:client_id, :street,
 																													:exterior_number,
 																													:interior_number,
 																													:county, :state, 
 																													:city, :delegation,
-																													:zip_code, :country]
+																													:zip_code, :country, :_destroy]
 																	).merge(user_id: current_user.id)
 	end
 

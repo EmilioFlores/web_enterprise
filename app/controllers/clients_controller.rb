@@ -25,7 +25,7 @@
 #
 
 class ClientsController < ApplicationController
-	before_filter :check_session
+	before_filter :check_session_and_completed_user
 
 	def index
 		@clients = current_user.clients.real_clients
@@ -54,7 +54,6 @@ class ClientsController < ApplicationController
 
 	def update
 		@client = Client.find(params[:id])
-
 		if @client.update_attributes(client_params)
 			redirect_to @client, notice: 'Client was successfully updated.'
 		else
@@ -85,14 +84,14 @@ class ClientsController < ApplicationController
 								:second_last_name,
 								:birth_date,
 								:married_date,
-								:gender],
+								:gender, :_destroy],
 			offsprings_attributes: [:id,
 								:first_name, 
 								:second_name, 
 								:last_name,
 								:second_last_name,
 								:birth_date,
-								:gender],
+								:gender, :_destroy],
 			addresses_attributes: [:id,
 								:user_id,
 								:client_id,
@@ -104,7 +103,7 @@ class ClientsController < ApplicationController
 								:city,
 								:delegation,
 								:zip_code,
-								:country]
+								:country, :_destroy]
 		).merge(user_id: current_user.id, real_client: true, client_prospect: true)
 	end
 

@@ -1,5 +1,5 @@
 class CalendarController < ApplicationController
-	before_filter :check_session
+	before_filter :check_session_and_completed_user
 	before_action :find_clients, :find_policies, only: [:index]
 	
 	def index

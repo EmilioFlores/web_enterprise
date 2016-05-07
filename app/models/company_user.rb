@@ -28,11 +28,9 @@
 class CompanyUser < ActiveRecord::Base
   acts_as_paranoid
 
-	belongs_to :client, inverse_of: :company_users
 	belongs_to :user, inverse_of: :company_users
 	belongs_to :company, inverse_of: :company_users
 
-  validates :client, presence: true
   validates :user, presence: true
   validates :company, presence: true
 

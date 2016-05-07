@@ -10,10 +10,16 @@ class ApplicationController < ActionController::Base
       I18n.default_locale
   end
 
-
   def check_session
     return redirect_to new_user_session_path unless current_user
     return redirect_to admin_index_path if current_user.admin?
+  end
+
+
+  def check_session_and_completed_user
+    return redirect_to new_user_session_path unless current_user
+    return redirect_to admin_index_path if current_user.admin?
+    return redirect_to complete_registration_path if current_user.uncompleted?
     return redirect_to user_disabled_path unless current_user.enabled?
   end
 

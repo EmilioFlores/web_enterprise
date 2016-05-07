@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
   acts_as_paranoid
   enum marital_status: [:single, :married, :widowed]
   enum status: [:disabled, :enabled]
+  enum registration_status: [:uncompleted, :completed]
   enum user_type: [:regular, :admin]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -48,19 +49,27 @@ class User < ActiveRecord::Base
   has_many :clients, inverse_of: :user
   has_many :referrals, foreign_key: "referrer_id", class_name: 'Referral'
   has_many :company_users, inverse_of: :user
-
-  validates :phone_number, numericality: true, on: :update
-  validates :phone_number, presence: true, on: :update
+  has_many :companies, inverse_of: :users, through: :company_users
 
   accepts_nested_attributes_for :company_users, allow_destroy: true
+
+  after_commit :update_registration_status
 
   def full_name
     return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
   end
 
+  def registration_attributes?
+    !first_name.blank? && !last_name.blank? && !phone_number.blank?
+  end
+
   private
 
-  def registration_attributes?
-    first_name && last_name && phone_number
+  def update_registration_status
+    if self.registration_attributes? && self.company_users.size > 0
+      self.update_columns(registration_status: 1)
+    else
+      self.update_columns(registration_status: 0)
+    end
   end
 end

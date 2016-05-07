@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   resources :policies
   resources :referrals
 
+  get '/user/company/:id', to: 'company_users#show', as: :company_user
+
   ###################################USERS######################################
 
-  get '/users/:id', to: 'users#profile',  as: :user
+  get '/user', to: 'users#profile',  as: :user
 
   ##############################################################################
 
@@ -21,7 +23,6 @@ Rails.application.routes.draw do
   															as: :complete_registration
   patch '/complete_registration/:id', to: 'users#complete_registration_update',
   																		as: :complete_registration_update
-  get '/user_companies', to: 'users#user_companies', as: :user_companies
 
   get '/calendar', to: 'calendar#index',  as: :calendar
 

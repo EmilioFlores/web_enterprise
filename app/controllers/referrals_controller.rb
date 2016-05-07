@@ -16,7 +16,7 @@
 #
 
 class ReferralsController < ApplicationController
-	before_filter :check_session
+	before_filter :check_session_and_completed_user
 	before_action :find_model, only: [:show, :edit, :update]
 
 

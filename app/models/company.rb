@@ -14,6 +14,7 @@ class Company < ActiveRecord::Base
   
 	has_many :policies, inverse_of: :company
 	has_many :company_users, inverse_of: :company
+  has_many :users, inverse_of: :companies, through: :company_users
 
   validates :name, presence: true
   validates :url, presence: true

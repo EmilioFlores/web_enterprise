@@ -1,82 +1,89 @@
-<%= simple_form_for @policy do |f| %>
-	<div class="container-fluid">
-		<div class="row">
-	    <div class="col-md-4">
-	    	<%= f.association :client, label: t('client'), collection: current_user.clients.order(:last_name), label_method: :full_name, selected: @policy.client_id%>
-	    </div>
-	    <div class="col-md-4">
-	    	<%= f.association :company, label: t('company'), selected: @policy.company_id %>
-	    </div>
-	    <div class="col-md-3">
-	    	<%= f.input :policy_number, label: t('product_number') %>
-	    </div>
-	    <div class="col-md-3">
-	    	<%= f.input :product_name, label: t('product_name') %>
-	    </div>
-	    <div class="col-md-6"></div>
-	    <div class="col-md-3">
-	    	<%= f.input :policy_type, label: t('policy_type') %>
-	    </div>
-	    <div class="col-md-3">
-	    	<%= f.input :renewal_method, label: t('renewal_method') %>
-	    </div>
-	    <div class="col-md-3">
-	    	<%= f.input :payment_method, label: t('payment_method') %>
-	    </div>
-	    <div class="col-md-3">
-	    	<%= f.input :issued_date, label: t('issued_date'), as: :date_picker %>
-	    </div>
-	    <div class="col-md-3">
-	    	<%= f.input :expiration_date, label: t('expiration_date'), as: :date_picker %>
-	    </div>
-		</div>
-		<hr>
-
-		<div id="comission_form">
-			<h2><%= t('comission') %></h2>
-			<div class="items">
-			<%= f.nested_fields_for :comission do |ff| %>
-				<fieldset class="item">
-					<div class="row">
-					    <div class="col-md-3">
-					    	<%= ff.input :first_year, label: t('first_year') %>
-					    </div>
-						<div class="col-md-3">
-							<%= ff.input :second_year, label: t('second_year')%>
-						</div>
-						<div class="col-md-3">
-							<%= ff.input :third_year, label: t('third_year') %>
-						</div>
-						<div class="col-md-3">
-							<%= ff.input :fourth_year, label: t('fourth_year') %>
-						</div>
-					</div>
-					<div class="row">
-					    <div class="col-md-3">
-					    	<%= ff.input :fifth_year, label: t('fifth_year') %>
-					    </div>
-						<div class="col-md-3">
-							<%= ff.input :post_fifth_year, label: t('post_fifth_year')%>
-						</div>
-						<div class="col-md-3">
-							<%= ff.input :base_prime, label: t('base_prime') %>
-						</div>
-					</div>
-
-					<a href="#" class="remove btn-sm btn-danger"> - <%= t('remove') %></a>
-
-					<%= ff.hidden_field :id %>
-					<%= ff.hidden_field :_destroy %>
-				</fieldset>
-			<% end %>
+<% if current_user.clients.any? %>	
+	<%= simple_form_for @policy do |f| %>
+		<div class="container-fluid">
+			<div class="row">
+		    <div class="col-md-4">
+		    	<%= f.association :client, label: t('client'), collection: current_user.clients.order(:last_name), label_method: :full_name, selected: @policy.client_id%>
+		    </div>
+		    <div class="col-md-4">
+		    	<%= f.association :company, label: t('company'), selected: @policy.company_id, collection: current_user.companies%>
+		    </div>
+		    <div class="col-md-3">
+		    	<%= f.input :policy_number, label: t('product_number') %>
+		    </div>
+		    <div class="col-md-3">
+		    	<%= f.input :product_name, label: t('product_name') %>
+		    </div>
+		    <div class="col-md-6"></div>
+		    <div class="col-md-3">
+		    	<%= f.input :policy_type, label: t('policy_type') %>
+		    </div>
+		    <div class="col-md-3">
+		    	<%= f.input :renewal_method, label: t('renewal_method') %>
+		    </div>
+		    <div class="col-md-3">
+		    	<%= f.input :payment_method, label: t('payment_method') %>
+		    </div>
+		    <div class="col-md-3">
+		    	<%= f.input :issued_date, label: t('issued_date'), as: :date_picker %>
+		    </div>
+		    <div class="col-md-3">
+		    	<%= f.input :expiration_date, label: t('expiration_date'), as: :date_picker %>
+		    </div>
 			</div>
-			<a href="#" class="add btn-sm btn-success">+ <%= t('add') + ' ' + t('comission') %></a>
+			<hr>
+
+			<div id="comission_form">
+				<h2><%= t('comission') %></h2>
+				<div class="items">
+				<%= f.nested_fields_for :comission do |ff| %>
+					<fieldset class="item">
+						<div class="row">
+						    <div class="col-md-3">
+						    	<%= ff.input :first_year, label: t('first_year') %>
+						    </div>
+							<div class="col-md-3">
+								<%= ff.input :second_year, label: t('second_year')%>
+							</div>
+							<div class="col-md-3">
+								<%= ff.input :third_year, label: t('third_year') %>
+							</div>
+							<div class="col-md-3">
+								<%= ff.input :fourth_year, label: t('fourth_year') %>
+							</div>
+						</div>
+						<div class="row">
+						    <div class="col-md-3">
+						    	<%= ff.input :fifth_year, label: t('fifth_year') %>
+						    </div>
+							<div class="col-md-3">
+								<%= ff.input :post_fifth_year, label: t('post_fifth_year')%>
+							</div>
+							<div class="col-md-3">
+								<%= ff.input :base_prime, label: t('base_prime') %>
+							</div>
+						</div>
+
+						<a href="#" class="remove btn-sm btn-danger"> - <%= t('remove') %></a>
+
+						<%= ff.hidden_field :id %>
+						<%= ff.hidden_field :_destroy %>
+					</fieldset>
+				<% end %>
+				</div>
+				<a href="#" class="add btn-sm btn-success">+ <%= t('add') + ' ' + t('comission') %></a>
+			</div>
+
+
+		<div class="bot-nav-btns">
+	  	<%= link_to 'Back', :back, class: "btn btn-default" %>
+	  	<%= f.submit "Submit", class: "btn btn-primary" %>
 		</div>
 
-
-	<div class="bot-nav-btns">
-  	<%= link_to 'Back', :back, class: "btn btn-default" %>
-  	<%= f.submit "Submit", class: "btn btn-primary" %>
+	<% end %>
+<% else %>
+	<div class="alert alert-danger">
+	  <strong><%= t('important') %></strong> 
+	  <%= t('no_clients_for_policy')%>
 	</div>
-
 <% end %>

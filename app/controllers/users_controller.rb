@@ -35,6 +35,8 @@
 #
 
 class UsersController < ApplicationController
+  before_filter :check_session
+
   def set_locale
     new_locale = params[:locale]
     if ['es', 'en'].include?(new_locale)
@@ -49,12 +51,11 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def complete_registration
     @user = current_user
-    render :user_companies if @user.completed?
   end
 
   def complete_registration_update
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
 
   def redirect_after_complete_registration
     if @user.completed?
-      redirect_to user_companies_path
+      redirect_to root_path
     else
       redirect_to complete_registration_path
     end
@@ -84,6 +85,24 @@ class UsersController < ApplicationController
 
   def complete_registration_params
     params.require(:user).permit(:first_name, :second_name, :last_name,
-                                 :second_last_name, :phone_number)
+                                 :second_last_name, :phone_number,
+                                 company_users_attributes: [:id, :company_id,
+                                                            :_destroy,
+                                                            :number_company,
+                                                            :has_promotoria,
+                                                            :user_name,
+                                                            :has_company,
+                                                            :agent_number,
+                                                            :has_promotoria,
+                                                            :number_promotoria,
+                                                            :name_promotoria_contact,
+                                                            :phone_promotoria_contact,
+                                                            :email_promotoria_contact,
+                                                            :has_company,
+                                                            :number_company,
+                                                            :name_company_contact,
+                                                            :phone_company_contact,
+                                                            :email_company_contact
+                                                            ])
   end
 end

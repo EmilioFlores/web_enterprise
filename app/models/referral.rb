@@ -17,7 +17,7 @@
 
 class Referral < ActiveRecord::Base
   acts_as_paranoid
-  enum status: [:pending, :confirmed, :deleted]
+  enum status: [:pending, :confirmed]
 
 	belongs_to :referrer, class_name: 'User', inverse_of: :referrals
 

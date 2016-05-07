@@ -9,6 +9,13 @@ div class="row"
       = @user.created_at.strftime('%d/%m/%Y')
   div class="col-md-12"
     hr
+.row
+  .col-md-12
+    a.btn.btn-md.btn-success.pull-right href="#{complete_registration_path}" 
+      = t('edit_info')
+  .col-md-12
+    hr
+    
 
 .row
   .col-md-12
@@ -24,3 +31,9 @@ div class="row"
       = @user.phone_number
   .col-md-12
     hr
+
+.row
+  .col-md-12
+    hr
+  .col-md-12
+    = render 'companies_table'

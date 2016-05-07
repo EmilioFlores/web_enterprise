@@ -18,7 +18,7 @@
 #
 
 class PoliciesController < ApplicationController
-	before_filter :check_session
+	before_filter :check_session_and_completed_user
 
 	def index
 		@policies = Policy.all()
@@ -69,6 +69,6 @@ class PoliciesController < ApplicationController
 											:fourth_year,
 											:fifth_year,
 											:post_fifth_year,
-											:base_prime])
+											:base_prime, :_destroy])
 	end
 end
