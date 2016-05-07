@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(email: 'admin@agent.com', password: '1234', password_confirmation: '1234', user_type: 1)
+User.create(email: 'admin@agent.com', password: 'administrador', password_confirmation: 'administrador', user_type: 1)
 Company.create(name:'A.N.A. Compañía de Seguros, S.A. de C.V.', url:'http://www.anaseguros.com.mx/')
 Company.create(name:'ABA Seguros, S.A. de C.V.', url:'http://www.abaseguros.com/')
 Company.create(name:'ACE Seguros, S.A.', url:'http://www.acelatinamerica.com/')
