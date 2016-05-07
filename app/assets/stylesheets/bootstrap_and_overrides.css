@@ -133,3 +133,8 @@ article {
 .block {
     display: block;
 }
+
+footer {
+	padding: 5px 15px;
+	text-align: center;
+}
