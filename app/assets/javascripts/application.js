@@ -46,8 +46,7 @@ $(document).ready(function () {
     toggleMenu();
   });
 
-    $('FORM').nestedFields();
-
+  $('FORM').nestedFields();
 
 	$('.add').click(datepicker_update);
 	$('.remove').click(datepicker_update);

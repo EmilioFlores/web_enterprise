@@ -187,6 +187,7 @@ es:
   logout: Logout
   middle_name: Segundo Nombre
   name: Nombre
+  child: Hijo
   next_events: Eventos Próximos
   select_a_gender: Selecciona un Genero
   married_date: Fecha de Matrimonio
@@ -267,3 +268,10 @@ es:
     pm: pm
   warning: ¡Advertencia!
   welcome: Bienvenido!
+  first_year: Primer año
+  second_year: Segundo año
+  third_year: Tercer año
+  fourth_year: Cuarto año
+  fifth_year: Quinto año
+  base_prime: Prima base
+  post_fifth_year: Despues del quinto año

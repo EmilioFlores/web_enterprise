@@ -1,24 +1,69 @@
 
-<h1><%= t('client') %>: <%= @client.full_name %></h1>
-<hr>
-<h4><%= t('email') %>: <%= @client.email %> <h4>
-<h4><%= t('birth_date') %>: <%= @client.birth_date %> <h4>
-<h4><%= t('gender') %>: <%= t(@client.gender) %> <h4>
-<h4><%= t('phone_number') %>: <%= @client.phone_number %> <h4>
-<h4><%= t('cellphone_number') %>: <%= @client.cellphone_number %> <h4>
-<h4><%= t('has_kids') %>: <%= @client.has_kids ? t('yes') : t('no') %> <h4>
-<h4><%= t('is_vip') %>: <%= @client.is_vip ? t('yes') : t('no') %> <h4>
-<h4><%= t('client_since') %>: <%= @client.client_since %> <h4>
 
-<hr>
-<h2><%= t('family') %></h2>
-<% unless @client.spouses.empty? %>
-	<h4><%= t('spouse') %>: <%= @client.spouses.first.full_name %></h4>
-<% else %>
-	<h4><%= t('no_spouse') %></h4>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+		<table class="table table-striped">
+			<thead>
+				<th>
+					<h2><%= t('client') %></h2>
+				</th>
+				<td>
+					<h2> <%= @client.full_name %></h2>
+				</td>
+
+			</thead>
+			<tr>
+				<th> <h4><%= t('email') %></h4>  </td>
+				<td> <h4><%= @client.email %></h4> </td>
+			</tr>
+			<tr>
+				<th> <h4><%= t('birth_date') %></h4> </th>
+				<td> <h4><%= @client.birth_date %></h4>  </td>
+			</tr>
+			<tr>
+				<th> <h4><%= t('gender') %> </h4> </th>
+				<td> <h4> <%= t(@client.gender) %> </h4> </td>
+			</tr>
+			<tr>
+				<th><h4><%= t('phone_number') %> </h4> </th>
+				<td> <h4> <%= @client.phone_number %> </h4> </td>
+			</tr>
+			<tr>
+				<th>	<h4><%= t('cellphone_number') %>	</th> </th>
+				<td> <h4> <%= @client.cellphone_number %> </h4> </td>
+			</tr>
+			<tr>
+				<th><h4><%= t('has_kids') %></h4></th>
+				<td><h4><%= @client.has_kids ? t('yes') : t('no') %></h4> </td>
+			</tr>
+			<tr>
+				<th> <h4><%= t('is_vip') %> </h4></th>
+				<td><h4><%= @client.is_vip ? t('yes') : t('no') %> </h4> </td>
+			</tr>
+			<tr>
+				<th> <h4><%= t('client_since') %> </h4></th>
+				<td> <h4><%= @client.client_since %> </h4> </td>
+			</tr>
+		</table>
+
+		<hr>
+		<h2><%= t('family') %></h2>
+		<% unless @client.spouses.empty? %>
+			<h4><%= t('spouse') %>: <%= @client.spouses.first.full_name %></h4>
+		<% else %>
+			<h4><%= t('no_spouse') %></h4>
+		<% end %>
+
+		
+		<% @client.offsprings.each do |offspring| %>
+	          <h4><%= t('child') %>: <%=offspring.full_name %></h4>
+      	<% end %>
+
+		<div class="bot-nav-btns">
+			<%= link_to t('edit'), edit_client_path(@client), class: 'btn btn-primary' %>
+		</div>
 
 
-<div class="bot-nav-btns">
-	<%= link_to t('edit'), edit_client_path(@client), class: 'btn btn-primary' %>	
+	</div>
 </div>

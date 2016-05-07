@@ -14,6 +14,8 @@ $(function(){
 		            	var clean_data = []
 		            	birth_dates = JSON.parse(data.birth_dates);
 		            	policies = JSON.parse(data.policies);
+		            	spouses = JSON.parse(data.spouses);
+		            	offspring = JSON.parse(data.offspring);
 		            	for (var i = birth_dates.length - 1; i >= 0; i--) {
 		            		if (birth_dates[i].date) {
 		            			clean_data.push(birth_dates[i]);
@@ -22,6 +24,16 @@ $(function(){
 		            	for (var i = policies.length - 1; i >= 0; i--) {
 		            		if (policies[i].date) {
 		            			clean_data.push(policies[i]);
+		            		}
+		            	};
+		            	for (var i = spouses.length - 1; i >= 0; i--) {
+		            		if (spouses[i].date) {
+		            			clean_data.push(spouses[i]);
+		            		}
+		            	};
+		            	for (var i = offspring.length - 1; i >= 0; i--) {
+		            		if (offspring[i].date) {
+		            			clean_data.push(offspring[i]);
 		            		}
 		            	};
 		            	console.log(data);

@@ -21,9 +21,11 @@ class Referral < ActiveRecord::Base
 
 	belongs_to :referrer, class_name: 'User', inverse_of: :referrals
 
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
+
 	validates_uniqueness_of :email
-	validate :unique_email
-	validates :email, presence: true
+	validate :unique_email, on: :create
+	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
 	def full_name
 		return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"

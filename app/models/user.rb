@@ -36,6 +36,7 @@
 
 class User < ActiveRecord::Base
   acts_as_paranoid
+  after_save :check_referrals, on: :create
   enum marital_status: [:single, :married, :widowed]
   enum status: [:disabled, :enabled]
   enum registration_status: [:uncompleted, :completed]
@@ -72,4 +73,14 @@ class User < ActiveRecord::Base
       self.update_columns(registration_status: 0)
     end
   end
+
+  def check_referrals
+    # user was already saved in 'super' method
+    ref = Referral.where(email: email)
+    unless ref.empty?
+      ref = ref.take # grabbing the first (only) element
+      ref.confirmed! if ref.pending?
+    end
+  end
+
 end
