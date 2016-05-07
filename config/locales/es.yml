@@ -187,6 +187,7 @@ es:
   logout: Logout
   middle_name: Segundo Nombre
   name: Nombre
+  child: Hijo
   next_events: Eventos Próximos
   select_a_gender: Selecciona un Genero
   married_date: Fecha de Matrimonio

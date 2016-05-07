@@ -31,12 +31,11 @@ class Spouse < ActiveRecord::Base
 		return first_name + ' ' + second_name + ' ' + last_name + ' ' + second_last_name
 	end
 
-
 	# Full calendar data
 	def title
 		
 		name = self.client.full_name if self.client 
-		"Birthdate of spause #{first_name} #{last_name} From #{name}"
+		"Birthdate of spouse #{first_name} #{last_name} \n From #{name}"
 	end
 
 	def date
@@ -44,7 +43,7 @@ class Spouse < ActiveRecord::Base
 	end
 
 	def link
-		"/clients/#{id}"
+		"/clients/#{client.id}"
 	end
 
 	def color
