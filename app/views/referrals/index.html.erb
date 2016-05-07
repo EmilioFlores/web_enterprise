@@ -1,29 +1,26 @@
 <h2>Referrals</h2>
-<div style="padding-top: 50px; font-size: medium;" >
-  <div class="table-responsive">
-    <table class="table" id="referralsTable" cellspacing="0" width="100%">
 
-      <thead>
-        <tr>
-          <th><h2>Name</h2></th>
-          <th><h2>Email</h2></th>
-          <th><h2>Show</h2></th>
-          <th><h2>Edit</h2></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @referrals.each do |referral| %>
-          <tr>
-            <td><%= referral.full_name %></td>
-            <td><%= referral.email %></td>
-            <td><%= link_to 'Show', referral %></td>
-            <td><%= link_to 'Edit', edit_referral_path(referral) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<%= link_to "New Referral", new_referral_path, :class => 'btn btn-primary' %>
 
-  <br>
-  <%= link_to "New Referral", new_referral_path %>
-</div>
+<div class="table-responsive">
+	<table class="table" id="referralsTable" cellspacing="0" width="100%">
+
+	<thead>
+		<tr>
+			<th><h2>Name</h2></th>
+			<th><h2>Email</h2></th>
+			<th><h2>Show</h2></th>
+			<th><h2>Edit</h2></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @referrals.each do |referral| %>
+		<tr>
+			<td><%= referral.full_name %></td>
+			<td><%= referral.email %></td>
+			<td><%= link_to 'Show', referral %></td>
+			<td><%= link_to 'Edit', edit_referral_path(referral) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
