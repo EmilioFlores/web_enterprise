@@ -106,6 +106,10 @@ article {
   padding: 40px 10%;
 }
 
+.btn {
+	height: 35px;
+}
+
 .table-responsive {
 	padding: 10px 0;
 }
@@ -128,4 +132,9 @@ article {
 
 .block {
     display: block;
+}
+
+footer {
+	padding: 5px 15px;
+	text-align: center;
 }

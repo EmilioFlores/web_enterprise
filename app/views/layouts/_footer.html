@@ -1,0 +1,5 @@
+<footer>
+	<p>&copy; 2016 AGENTplus</p>
+	<%= link_to_if current_user.locale != 'en', image_tag("USA-flag-icon.png", height: '16', width: '22'), set_user_locale_path(locale: 'en'), method: :post, class: "locale_active"%>
+	<%= link_to_if current_user.locale != 'es', image_tag("mexico-flag-icon.png", height: '16', width: '22'), set_user_locale_path(locale: 'es'), method: :post, class: "locale_active"%>
+</footer>
