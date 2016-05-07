@@ -17,5 +17,15 @@
 #
 
 class Comission < ActiveRecord::Base
+  acts_as_paranoid
+  
 	belongs_to :policy, inverse_of: :comission
+
+  validates :policy, presence: true
+  validates :first_year, presence: true
+  validates :second_year, presence: true
+  validates :third_year, presence: true
+  validates :fourth_year, presence: true
+  validates :post_fifth_year, presence: true
+  validates :base_prime, presence: true
 end

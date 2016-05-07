@@ -25,6 +25,8 @@
 #
 
 class Client < ActiveRecord::Base
+  acts_as_paranoid
+	
 	belongs_to :user, inverse_of: :clients
 
 	has_many :spouses, inverse_of: :client
@@ -49,6 +51,10 @@ class Client < ActiveRecord::Base
 	scope :client_prospects, -> { where(client_prospect: true, real_client: false) }
 	scope :prospects, -> { where(real_client: false, client_prospect: false) }
 	scope :any_prospects, -> {where(real_client: false)}
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :birth_date, presence: true
 
 	def real_client?
 		real_client

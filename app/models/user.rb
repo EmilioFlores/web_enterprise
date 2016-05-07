@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
   acts_as_paranoid
   enum marital_status: [:single, :married, :widowed]
   enum status: [:registered, :completed, :enable, :disable]
+  enum user_type: [:regular, :admin]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

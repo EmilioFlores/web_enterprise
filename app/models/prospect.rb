@@ -13,5 +13,11 @@
 #
 
 class Prospect < ActiveRecord::Base
+  acts_as_paranoid
+
 	belongs_to :client, inverse_of: :prospects
+
+  validates :client, presence: true
+  validates :product_type, presence: true
+
 end

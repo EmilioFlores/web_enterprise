@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
-  root 'welcome#home'
+  root 'calendar#index'
+
+  get '/disabled', to: 'welcome#user_disabled', as: :user_disabled
 
   post '/set_locale', to: 'users#set_locale', as: :set_user_locale
 
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
 
   ###################################USERS######################################
 
-  get 'users/:id', to: 'users#profile',  as: :user
+  get '/users/:id', to: 'users#profile',  as: :user
 
   ##############################################################################
 

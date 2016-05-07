@@ -15,5 +15,11 @@
 #
 
 class Event < ActiveRecord::Base
+  acts_as_paranoid
+
 	has_many :notifications, inverse_of: :event
+  belongs_to :client, inverse_of: :events
+
+  validates :client, presence: true
+
 end

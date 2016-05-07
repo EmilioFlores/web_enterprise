@@ -20,6 +20,15 @@
 #
 
 class Address < ActiveRecord::Base
+  acts_as_paranoid
+  
 	belongs_to :user, inverse_of: :addresses
 	belongs_to :client, inverse_of: :addresses
+
+  validates :county, presence: true
+  validates :state, presence: true
+  validates :city, presence: true
+  validates :delegation, presence: true
+  validates :zip_code, presence: true
+  validates :country, presence: true
 end

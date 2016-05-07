@@ -1,4 +1,3 @@
-
 class CalendarController < ApplicationController
 	before_filter :check_session
 
@@ -11,6 +10,5 @@ class CalendarController < ApplicationController
 
 	def show
 	end
-
 
 end

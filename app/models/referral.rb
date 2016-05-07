@@ -16,11 +16,14 @@
 #
 
 class Referral < ActiveRecord::Base
+  acts_as_paranoid
+
 	belongs_to :referrer, class_name: 'User', inverse_of: :referrals
 
 	validates_uniqueness_of :email
 	validate :unique_email
-	
+	validates :email, presence: true
+
 	def full_name
 		return "#{first_name}  #{second_name}  #{last_name}  #{second_last_name}"
 	end

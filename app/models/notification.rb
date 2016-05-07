@@ -13,5 +13,10 @@
 #
 
 class Notification < ActiveRecord::Base
+  acts_as_paranoid
+
 	belongs_to :event, inverse_of: :notifications
+
+  validates :event, presence: true
+
 end
