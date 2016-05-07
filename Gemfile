@@ -35,6 +35,7 @@ gem 'devise'
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'jquery-datatables-rails', '~> 3.3.0'
+gem "bootstrap-switch-rails"
 
 # Charts
 gem "highcharts-rails"

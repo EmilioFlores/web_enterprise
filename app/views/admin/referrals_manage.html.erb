@@ -1,0 +1,26 @@
+<h1>Referrals list</h1>
+
+<div class="table-responsive">
+  <table id="clientsTable" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Referrer email</th>
+        <th>Referrer name</th>
+        <th>Email</th>
+        <th>Referred since</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @referrals.each do |referral| %>
+        <tr>
+          <td><%= referral.referrer.email %></td>
+          <td><%= referral.referrer.full_name %></td>
+          <td><%= referral.email %></td>
+          <td><%= referral.created_at.try(:strftime, '%d/%m/%Y') %></td>
+          <td><%= check_box_tag 'enabled', 'hidden', user.enabled?, class: 'enabled-checkbox form-control', id: "enabled-checkbox", data: {user_id: user.id} %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

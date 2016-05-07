@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
 
 
   def check_session
-    redirect_to new_user_session_path unless current_user
+    return redirect_to new_user_session_path unless current_user
+    return redirect_to admin_index_path if current_user.admin?
+    return redirect_to user_disabled_path unless current_user.enabled?
   end
 
+  def check_admin
+    redirect_to destroy_user_session_path unless current_user.admin?
+  end
 end
