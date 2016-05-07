@@ -11,12 +11,19 @@ $(function(){
 					dataType: 'json',
 					url: '/calendar.json',
 		            success: function(data) {
+		            	console.log(data);
 		            	var clean_data = []
-		            	for (var i = data.length - 1; i >= 0; i--) {
-		            		if (data[i].date) {
-		            			clean_data.push(data[i]);
+		            	for (var i = data.policies.length - 1; i >= 0; i--) {
+		            		if (data.policies[i].date) {
+		            			clean_data.push(data.policies[i]);
 		            		}
 		            	};
+		            	for (var i = data.birth_dates.length - 1; i >= 0; i--) {
+		            		if (data.birth_dates[i].date) {
+		            			clean_data.push(data.birth_dates[i]);
+		            		}
+		            	};
+
 		            	console.log(data);
 		                callback(clean_data);
 		            }
