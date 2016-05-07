@@ -22,7 +22,7 @@ class Referral < ActiveRecord::Base
 	belongs_to :referrer, class_name: 'User', inverse_of: :referrals
 
 	validates_uniqueness_of :email
-	validate :unique_email
+	validate :unique_email, on: :create
 	validates :email, presence: true
 
 	def full_name
