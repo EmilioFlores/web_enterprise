@@ -29,19 +29,19 @@ class Client < ActiveRecord::Base
 	
 	belongs_to :user, inverse_of: :clients
 
-	has_many :spouses, inverse_of: :client
+	has_many :spouses, inverse_of: :client, dependent: :destroy
 	accepts_nested_attributes_for :spouses, allow_destroy: true
 
-	has_many :prospects, inverse_of: :client
-	has_many :policies, inverse_of: :client
+	has_many :prospects, inverse_of: :client, dependent: :destroy
+	has_many :policies, inverse_of: :client, dependent: :destroy
 
 	# TODO: remove this shieeeet
-	has_many :events, inverse_of: :client
+	has_many :events, inverse_of: :client, dependent: :destroy
 
-	has_many :offsprings, inverse_of: :client
+	has_many :offsprings, inverse_of: :client, dependent: :destroy
 	accepts_nested_attributes_for :offsprings, allow_destroy: true
 	
-	has_many :addresses, inverse_of: :client
+	has_many :addresses, inverse_of: :client, dependent: :destroy
 	accepts_nested_attributes_for :addresses, allow_destroy: true
 
 	enum marital_status: [:single, :married, :widowed]
