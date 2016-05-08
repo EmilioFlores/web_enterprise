@@ -50,6 +50,12 @@ class ReferralsController < ApplicationController
 			render action: "edit"
 		end
 	end
+
+	def destroy
+		@referral = Referral.find(params[:id])
+	    @referral.destroy
+		redirect_to referrals_path
+	end
 	
 	private
 	def find_model

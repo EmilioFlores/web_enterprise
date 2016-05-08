@@ -5,4 +5,5 @@
 <div class="bot-nav-btns">
   	<%= link_to 'Back to index', referrals_path, class: "btn btn-default" %>
 	<%= link_to t('edit'), edit_referral_path(@referral), class: 'btn btn-primary' %>	
+	<%= button_to "Delete", @referral, :method => :delete, class: 'btn btn-danger pull-right', data: {confirm: "Are you sure?"} %>
 </div>
