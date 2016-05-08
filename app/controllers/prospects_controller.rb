@@ -62,6 +62,12 @@ class ProspectsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@prospect = Prospect.find(params[:id])
+	    @prospect.destroy
+		redirect_to prospects_path
+	end
+
 	private
 
 	def prospect_params

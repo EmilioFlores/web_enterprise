@@ -20,5 +20,6 @@
 
 
 <div class="bot-nav-btns">
+	<%= button_to "Delete", @prospect, :method => :delete, class: 'btn btn-danger pull-right', data: {confirm: "Are you sure?"} %>
 	<%= link_to t('edit'), edit_prospect_path(@prospect), class: 'btn btn-primary' %>	
 </div>
