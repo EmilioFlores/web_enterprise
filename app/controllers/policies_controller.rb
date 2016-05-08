@@ -55,6 +55,12 @@ class PoliciesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@policy = Policy.find(params[:id])
+	    @policy.destroy
+		redirect_to policies_path
+	end
+
 	private
 
 	def policy_params

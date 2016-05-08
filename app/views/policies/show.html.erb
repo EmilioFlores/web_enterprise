@@ -88,6 +88,7 @@
 		</table>
 
 		<div class="bot-nav-btns">
+			<%= button_to "Delete", @policy, :method => :delete, class: 'btn btn-danger pull-right', data: {confirm: "Are you sure?"} %>
 			<%= link_to t('edit'), edit_policy_path(@policy), class: 'btn btn-primary' %>
 		</div>
 
