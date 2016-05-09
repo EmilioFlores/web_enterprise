@@ -34,7 +34,12 @@ class Offspring < ActiveRecord::Base
 	# Full calendar data
 	def title
 		name = self.client.full_name if self.client 
-		"Birthdate of child #{first_name} #{last_name} \n From #{name}"
+		if I18n.locale == :en 
+			"Birthdate of child #{first_name} #{last_name} \n From #{name}"
+		elsif I18n.locale == :es
+			"Cumpleaños de hijo #{first_name} #{last_name} \n de #{name}"
+
+		end
 	end
 
 	def date

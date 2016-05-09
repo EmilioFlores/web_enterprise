@@ -38,8 +38,14 @@ class Policy < ActiveRecord::Base
 
   # Full calendar data
 	def title
+		
 		name = self.client.full_name if self.client
-		"Policy end from: #{name}"
+				
+		if I18n.locale == :en 
+			"Policy end from: #{name}"
+		elsif I18n.locale == :es 
+			"Expira poliza de: #{name}"
+		end
 	end
 
 	def date
@@ -56,6 +62,7 @@ class Policy < ActiveRecord::Base
 
 	def as_json(options={})
 	  super(only: [], methods: [:title, :date, :link, :color])
+		
 end
 
 

@@ -77,7 +77,13 @@ class Client < ActiveRecord::Base
 
 	# Full calendar data
 	def title
-		"Birthdate: #{first_name} #{last_name}"
+		if I18n.locale == :en 
+			"Birthdate: #{first_name} #{last_name}"
+		elsif I18n.locale == :es
+
+			"Cumpleaños: #{first_name} #{last_name}"
+		end 
+			
 	end
 
 	def date

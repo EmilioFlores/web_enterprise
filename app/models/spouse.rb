@@ -35,7 +35,13 @@ class Spouse < ActiveRecord::Base
 	def title
 		
 		name = self.client.full_name if self.client 
-		"Birthdate of spouse #{first_name} #{last_name} \n From #{name}"
+
+		if I18n.locale == :en 
+			"Birthdate of spouse #{first_name} #{last_name} \n From #{name}"
+		elsif I18n.locale == :es 
+			"Cumpleaños de pareja #{first_name} #{last_name} \n de #{name}"
+		end
+
 	end
 
 	def date
