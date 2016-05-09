@@ -22,9 +22,9 @@
 	</div>
 	<hr>
 
-	<div class="bot-nav-btns">
-  	<%= link_to 'Back to index', referrals_path, class: "btn btn-default" %>
-  	<%= f.submit "Submit", class: "btn btn-primary" %>
-	</div>
+	  <div class="bot-nav-btns">
+      <%= link_to t('back'), referrals_path, class: "btn btn-default" %>
+      <%= f.submit t('submit'), class: "btn btn-primary" %>
+  </div>
 
 <% end %>

@@ -23,6 +23,8 @@ es:
         one: Usuario
         other: Usuarios
   add: Agregar
+  back: Atras
+  submit: Enviar
   destroy: Borrar
   comission: Comision
   birth_date: Fecha de Nacimiento
@@ -186,7 +188,7 @@ es:
       submit: Guardar %{model}
       update: Actualizar %{model}
   info: Información
-  policies: Politicas
+  policies: Polizas
   clients: Clientes
   prospects: Prospectos
   referrals: Referidos

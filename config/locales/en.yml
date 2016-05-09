@@ -23,6 +23,8 @@ en:
         one: User
         other: Users
   add: Add
+  back: Back
+  submit: Submit
   destroy: Delete
   comission: Comission
   birth_date: Birth Date
