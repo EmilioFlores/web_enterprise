@@ -180,6 +180,11 @@ en:
       submit: Save %{model}
       update: Update %{model}
   info: Info
+  policies: Policies
+  clients: Clients
+  prospects: Prospects
+  referrals: Referrals
+  calendar: Calendar
   is_vip: Is VIP
   last_name: Last Name
   locale_changed: Language changed
@@ -276,3 +281,5 @@ en:
   base_prime: Base prime
   post_fifth_year: Post fifth year
   child: Child
+  user_updated: User info updated
+  users: Users
