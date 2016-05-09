@@ -180,12 +180,17 @@ es:
       submit: Guardar %{model}
       update: Actualizar %{model}
   info: Información
+  policies: Politicas
+  clients: Clientes
+  prospects: Prospectos
+  referrals: Referidos
+  calendar: Calendario
   is_vip: Es VIP
   last_name: Apellido
   locale_changed: Lenguaje cambiado
   locale_changed_error: Error al intentar cambiar de lenguaje
-  login: Login
-  logout: Logout
+  login: Iniciar sesión
+  logout: Cerrar sesión
   middle_name: Segundo Nombre
   name: Nombre
   child: Hijo
@@ -323,3 +328,7 @@ es:
   email_company_contact: Correo de contacto de compañia
   add_company: Agregar compañia
   calendar: Calendario
+  user_updated: Datos de usuario actualizados
+  users: Usuarios
+
+
