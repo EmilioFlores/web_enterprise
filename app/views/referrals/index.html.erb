@@ -1,26 +1,27 @@
-<h1>Referrals</h1>
+<h1><%= t('referrals') %></h1>
 
-<%= link_to "New Referral", new_referral_path, :class => 'btn btn-primary' %>
+<%= link_to t("new_referral"), new_referral_path, :class => 'btn btn-primary' %>
 
 <div class="table-responsive">
-	<table class="table" id="referralsTable" cellspacing="0" width="100%">
-
-	<thead>
-		<tr>
-			<th><h2>Name</h2></th>
-			<th><h2>Email</h2></th>
-			<th><h2>Show</h2></th>
-			<th><h2>Edit</h2></th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @referrals.each do |referral| %>
-		<tr>
-			<td><%= referral.full_name %></td>
-			<td><%= referral.email %></td>
-			<td><%= link_to 'Show', referral %></td>
-			<td><%= link_to 'Edit', edit_referral_path(referral) %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+	
+	<table id="clientsTable" class="table table-striped table-bordered datatable" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th><%= t('name') %></th>
+				<th><%= t('email') %></th>
+				<th><%= t('show') %></th>
+				<th><%= t('edit') %></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @referrals.each do |referral| %>
+			<tr>
+				<td><%= referral.full_name %></td>
+				<td><%= referral.email %></td>
+				<td><%= link_to t('show'), referral %></td>
+				<td><%= link_to t('edit'), edit_referral_path(referral) %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

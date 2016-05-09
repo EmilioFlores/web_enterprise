@@ -24,7 +24,7 @@
 				<%= f.input :gender, prompt: t('select_a_gender'), label: t('gender') %>
 			</div>
 			<div class="col-md-3">
-				<%= f.input :marital_status %>
+				<%= f.input :marital_status, prompt: t('select_a_status'), label: t('marital_status') %>
 			</div>
 		</div>
 		<hr>
@@ -45,7 +45,7 @@
 		<hr>
 		<div class="row">
 		  <div class="col-md-12">
-		  	<%= f.input :client_prospect, input_html: {id: 'client_prospect_checkbox'}%>
+		  	<%= f.input :client_prospect, input_html: {id: 'client_prospect_checkbox'}, label: t('client_prospect') %>
 		  </div>
 		</div>
 		<div id="client_prospect_div">

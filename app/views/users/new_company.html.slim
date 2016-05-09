@@ -2,33 +2,33 @@ h1
   = t('new_company')
 = simple_form_for @company_user, url: new_user_company_path do |f|
   .col-md-12
-    = f.association :company
+    = f.association :company, label: t('company')
   .col-md-6
-    = f.input :agent_number
+    = f.input :agent_number, label: t('agent_number')
   .col-md-6
-    = f.input :user_name
+    = f.input :user_name, label: t('user_name')
   .col-md-12
-    = f.input :has_promotoria, input_html: {id: 'promotoria-fields'}
+    = f.input :has_promotoria, input_html: {id: 'promotoria-fields'}, label: t('has_promotoria')
   .promotoria-fields.hidden_div
     .col-md-6
-      = f.input :number_promotoria
+      = f.input :number_promotoria, label: t('number_promotoria')
     .col-md-6
-      = f.input :name_promotoria_contact
+      = f.input :name_promotoria_contact, label: t('name_promotoria_contact')
     .col-md-6
-      = f.input :phone_promotoria_contact
+      = f.input :phone_promotoria_contact, label: t('phone_promotoria_contact')
     .col-md-6
-      = f.input :email_promotoria_contact
+      = f.input :email_promotoria_contact, label: t('email_promotoria_contact')
   .col-md-12
-    = f.input :has_company, input_html: {id: 'company-fields'}
+    = f.input :has_company, input_html: {id: 'company-fields'}, label: t('has_company')
   .company-fields.hidden_div
     .col-md-6
-      = f.input :number_company
+      = f.input :number_company, label: t('number_company')
     .col-md-6
-      = f.input :name_company_contact
+      = f.input :name_company_contact, label: t('name_company_contact')
     .col-md-6
-      = f.input :phone_company_contact
+      = f.input :phone_company_contact, label: t('phone_company_contact')
     .col-md-6
-      = f.input :email_company_contact
+      = f.input :email_company_contact, label: t('email_company_contact')
   .actions.col-md-12.bot-nav-btns
     = link_to t('back').capitalize, :back, class: 'btn btn-default'
-    = f.submit nil, class: 'btn btn-primary'
+    = f.submit nil, class: 'btn btn-primary', label: t('add_company')

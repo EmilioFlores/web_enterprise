@@ -23,11 +23,11 @@ div class="row"
       = t('user_info')
   .col-md-12
     h4
-      | Email:&nbsp;
+      =  t('email') + ": "
       = @user.email
   .col-md-12
     h4
-      | Phone:&nbsp;
+      =  t('phone') + ": "
       = @user.phone_number
   .col-md-12
     hr

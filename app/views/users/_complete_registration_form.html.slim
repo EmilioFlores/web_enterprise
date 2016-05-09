@@ -1,14 +1,14 @@
 = simple_form_for @user, url: complete_registration_update_path(@user) do |f|
   .col-md-6
-    = f.input :first_name
+    = f.input :first_name, label: t('first_name')
   .col-md-6
-    = f.input :second_name
+    = f.input :second_name, label: t('second_name')
   .col-md-6
-    = f.input :last_name
+    = f.input :last_name, label: t('last_name')
   .col-md-6
-    = f.input :second_last_name
+    = f.input :second_last_name,label: t('second_last_name')
   .col-md-12
-    = f.input :phone_number
+    = f.input :phone_number, label: t('phone_number')
   .actions.col-md-12.bot-nav-btns
     = link_to t('back').capitalize, :back, class: 'btn btn-default'
     = f.submit nil, class: 'btn btn-primary'

@@ -276,3 +276,50 @@ es:
   fifth_year: Quinto año
   base_prime: Prima base
   post_fifth_year: Despues del quinto año
+  client: Cliente
+  product: Producto
+  company: Compañia
+  new_policy: Nueva Poliza
+  policy_type: Tipo de poliza
+  renewal_method: Método de renovación
+  payment_method: Método de pago
+  policy_number: Número de poliza
+  policy_issued: Fecha de expedición
+  expiration_date: Fecha de expiración
+  show: Mostrar
+  edit: Editar
+  new: Nuevo
+  marital_status: Estado Civil
+  select_a_status: Seleccione estado civil
+  prospect: Prospecto
+  referral: referido
+  new_policy: Nueva Poliza
+  new_client: Nuevo Cliente
+  new_referral: Nuevo Referido
+  new_prospect: Nuevo Prospecto
+  referrals: Referidos
+  clients_list: Lista de clientes
+  policy_list: Lista de polizas
+  prospects_list: Lista de prospectos
+  calendar: Calendario
+  client_prospect: Cliente Prospecto
+  product_number: Numero de producto
+  issued_date: Fehca de expedición
+  edit_info: Editar información
+  new_company: Agregar compañia
+  user_info: Información de usuario
+  agent_number: Número de agente
+  user_name: Usuario
+  member_since: Miembro desde
+  has_promotoria: Tiene promotoria
+  has_company: Tiene compañia
+  number_promotoria: Número de promotoria
+  name_promotoria_contact: Nombre de contacto de promotoria
+  phone_promotoria_contact: Telefono de contacto de promotoria
+  email_promotoria_contact: Correo de contacto de promotoria
+  number_company: Número de la compañia
+  name_company_contact: Nombre de contacto de compañia
+  phone_company_contact: Telefono de contacto de compañia
+  email_company_contact: Correo de contacto de compañia
+  add_company: Agregar compañia
+  calendar: Calendario

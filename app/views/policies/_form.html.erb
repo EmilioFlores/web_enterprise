@@ -8,26 +8,26 @@
 		    <div class="col-md-4">
 		    	<%= f.association :company, label: t('company'), selected: @policy.company_id, collection: current_user.companies%>
 		    </div>
-		    <div class="col-md-3">
+		    <div class="col-md-4">
 		    	<%= f.input :policy_number, label: t('product_number') %>
 		    </div>
-		    <div class="col-md-3">
+		    <div class="col-md-4">
 		    	<%= f.input :product_name, label: t('product_name') %>
 		    </div>
-		    <div class="col-md-6"></div>
-		    <div class="col-md-3">
+		  	
+		    <div class="col-md-4">
 		    	<%= f.input :policy_type, label: t('policy_type') %>
 		    </div>
-		    <div class="col-md-3">
+		    <div class="col-md-4">
 		    	<%= f.input :renewal_method, label: t('renewal_method') %>
 		    </div>
-		    <div class="col-md-3">
+		    <div class="col-md-4">
 		    	<%= f.input :payment_method, label: t('payment_method') %>
 		    </div>
-		    <div class="col-md-3">
+		    <div class="col-md-4">
 		    	<%= f.input :issued_date, label: t('issued_date'), as: :date_picker %>
 		    </div>
-		    <div class="col-md-3">
+		    <div class="col-md-4">
 		    	<%= f.input :expiration_date, label: t('expiration_date'), as: :date_picker %>
 		    </div>
 			</div>
