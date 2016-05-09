@@ -41,8 +41,20 @@ Rails.application.routes.draw do
   get '/admin/referrals_manage', to: 'admin#referrals_manage',
                                  as: :admin_referrals_manage
 
+  get '/admin/companies_manage', to: 'admin#companies_manage',
+                                 as: :admin_companies_manage
+
+  get '/admin/companies/new', to: 'admin#new_company',
+                                 as: :admin_new_company
+
+  
+  post '/admin/companies/new', to: 'admin#create_company'
+
   delete 'admin/delete_referral/:id', to: 'admin#destroy_referral',
                                       as: :admin_destroy_referral
+
+  delete 'admin/delete_company/:id', to: 'admin#destroy_company',
+                                      as: :admin_destroy_company
 
 
   ##############################################################################

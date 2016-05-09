@@ -16,8 +16,8 @@ class AdminController < ApplicationController
   end
 
   def destroy_referral
-    @referrals = Referral.find(params[:id])
-    if @referrals.destroy
+    @referral = Referral.find(params[:id])
+    if @referral.destroy
       flash[:success] = t('referral_destroy')
     else
       flash[:error] = t('referral_destroy_error')
@@ -33,5 +33,42 @@ class AdminController < ApplicationController
       @user.update_columns(status: 0)
     end
     render json: @user, status: 200
+  end
+
+  def companies_manage
+    @companies = Company.all
+  end
+
+  def destroy_company
+    @company = Company.find(params[:id])
+    if @company.users.any?
+      flash[:error] = t('company_destroy_error')
+    else
+      if @company.destroy
+        flash[:success] = t('company_destroy')
+      else
+        flash[:error] = t('company_destroy_error')
+      end
+    end
+    redirect_to admin_referrals_manage_path
+  end
+
+  def new_company
+    @company = Company.new
+  end
+
+  def create_company
+    @company = Company.new(company_params)
+    if @company.save
+      redirect_to admin_companies_manage_path
+    else
+      render :new_company
+    end
+  end
+
+  private
+
+  def company_params
+    params.require(:company).permit(:name, :url)
   end
 end

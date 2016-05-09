@@ -29,6 +29,12 @@ en:
   cellphone_number: Mobile Number
   client_since: Client Since
   complete_registration: complete registration
+  welcome_admin: Welcome to Agent+ administrator
+  companies_list: Companies list
+  disable_company_deletion: Deletion not allowed (registered agents)
+  company_destroy_error: Could not delete this company
+  company_destroy: Company deleted
+  new_company: New Company
   date:
     abbr_day_names:
     - Sun

@@ -29,6 +29,12 @@ es:
   cellphone_number: Teléfono Celular
   client_since: Cliente Desde
   complete_registration: completar registro
+  welcome_admin: Bienvenido al administrado de Agent+ 
+  companies_list: Lista de Compañias
+  disable_company_deletion: No se puede borrar (agentes registrados)
+  company_destroy_error: No se puede borrar la compañia
+  company_destroy: Compañia borrada
+  new_company: Nueva compañia
   date:
     abbr_day_names:
     - dom
